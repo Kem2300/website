@@ -1,0 +1,395 @@
+<!-- https://www.youtube.com/watch?v=ddaY0rHqMxM&list=PL07efmqYWHZ_cxA1GvuXQMA-VYk8dhuiv&index=18 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+	<meta name="description" content="Web Design">
+    <meta name="keywords" content="Website, UX, Design, Security">
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+	
+	<!-- Remixicon -->
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+
+	<!-- Google Icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/variables.css"> 
+	<link rel="stylesheet" href="css/navigation.css"> 
+	<link rel="stylesheet" href="css/home.css"> 
+	<link rel="stylesheet" href="css/buttons.css"> 
+	<link rel="stylesheet" href="css/logos.css"> 
+	<link rel="stylesheet" href="css/program.css"> 
+	<link rel="stylesheet" href="css/choose_us.css"> 
+	<link rel="stylesheet" href="css/pricing.css"> 
+	<link rel="stylesheet" href="css/calculate.css"> 
+	<link rel="stylesheet" href="css/footer.css"> 
+	<link rel="stylesheet" href="css/breakpoints.css"> 
+	<link rel="stylesheet" href="css/scroll_bar.css"> 
+	<link rel="stylesheet" href="css/contact.css"> 
+	
+	<title>KEM23</title>
+</head>
+
+<body>
+	<header class="header" id="header">
+		<nav class="nav container">
+			<a href="#" class="nav_logo">
+				<img src="img/favicon.png" alt="logo"> KEM23
+			</a>
+			
+			<div class="nav_menu" id="nav-menu">
+				<ul class="nav_list">
+					<li class="nav_item">
+						<a href="#home" class="nav_link active_link">Home</a>
+					</li>
+					<li class="nav_item">
+						<a href="#services" class="nav_link">Services</a>
+					</li>
+					<li class="nav_item">
+						<a href="#pricing" class="nav_link">Packages</a>
+					</li>
+
+					<div class="nav_link">
+						<a class="button nav_button open-button" onclick="openForm()">
+							Contact
+						</a>
+					</div>
+				</ul>
+				
+				<div class="nav_close" id="nav-close">
+					<i class="ri-close-line"></i>
+				</div>
+			</div>
+			
+			<!-- Toggle Button -->
+			<div class="nav_toggle" id="nav-toggle">
+				<i class="ri-menu-line"></i>
+			</div>
+		</nav>
+	</header>
+
+	<!-- The Contact form -->
+	<div class="form-popup" id="ContactForm">
+  		<div class="form-container">
+	    	<h1>Contact Us</h1>
+	    	<br><hr><br>
+	    	<p>Get a free consultation!</p>
+	    	<br>
+	    	<p><b>support@kem23.com</b></p>
+	    	<br>
+	    	<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  		</div>
+	</div>
+	
+	<main class="main">
+		<section class="home section" id="home">
+			<div class="home_container container grid">
+				<div class="home_data">
+					<h2 class="home_subtitle">WE'LL IMPROVE YOUR... </h2>
+					<h2 class="home_title">...<span class="typed"></span></h2>
+					<p class="home_description">
+						See how we can improve your business today! Click below to schedule a free consultation.
+					</p>
+
+					<a href="#" class="button button_flex open-button" onclick="openForm()">
+						Get Started <i class="ri-arrow-right-line"></i>
+					</a>
+				</div>
+				
+				<div class="home_images">
+					<img src="img/home.png" alt="home image" class="home_img">
+					
+					<div class="home_triangle home_triangle-3"></div>
+					<div class="home_triangle home_triangle-2"></div>
+					<div class="home_triangle home_triangle-1"></div>
+				</div>
+			</div>
+		</section>
+		
+		<section class="services section" id="services">
+			<div class="container">
+				<div class="section_data">
+					<h2 class="section_subtitle">Our Services</h2>
+					<div class="section_titles">
+						<h1 class="section_title-border">BUILD YOUR </h1>
+						<h1 class="section_title">WEBSITE TODAY</h1>
+					</div>
+				</div>
+				
+				<div class="program_container grid">
+					<article class="program_card">
+						<div class="program_shape">
+							<img src="img/program1.png" alt="program image" class="program_img">
+						</div>
+						
+						<h3 class="program_title">Website Creation</h3>
+						
+						<p class="program_description">
+							We create beautiful websites that increase sales
+							and improve workflow.
+						</p>
+						
+						<a class="program_button open-button" onclick="openForm()">
+							<i class="ri-arrow-right-line"></i>
+						</a>
+					</article>
+					
+					<article class="program_card">
+						<div class="program_shape">
+							<img src="img/program2.png" alt="program image" class="program_img">
+						</div>
+						
+						<h3 class="program_title">Website Hosting</h3>
+						
+						<p class="program_description">
+							Let us do your hosting for you so you don't have to
+							worry about configurations.
+						</p>
+						
+						<a class="program_button open-button" onclick="openForm()">
+							<i class="ri-arrow-right-line"></i>
+						</a>
+					</article>
+					
+					<article class="program_card">
+						<div class="program_shape">
+							<img src="img/program3.png" alt="program image" class="program_img">
+						</div>
+						
+						<h3 class="program_title">Ongoing Maintenance</h3>
+						
+						<p class="program_description">
+							Need someone to maintain your current website? We've got
+							you covered.
+						</p>
+						
+						<a class="program_button open-button" onclick="openForm()">
+							<i class="ri-arrow-right-line"></i>
+						</a>
+					</article>
+					
+					<article class="program_card">
+						<div class="program_shape">
+							<img src="img/program4.png" alt="program image" class="program_img">
+						</div>
+						
+						<h3 class="program_title">Security Testing</h3>
+						
+						<p class="program_description">
+							Let us ensure your website's security so you 
+							can have peace of mind.
+						</p>
+						
+						<a class="program_button open-button" onclick="openForm()">
+							<i class="ri-arrow-right-line"></i>
+						</a>
+					</article>
+				</div>
+			</div>
+			<br><br><br>
+			<div class="choose_overflow">
+				<div class="choose_container container grid">
+					<div class="choose_content">
+						<div class="section_data">
+							<h2 class="section_subtitle">Best Solution</h2>
+							<div class="section_titles">
+								<h1 class="section_title-border">WHY</h1>
+								<h1 class="section_title">CHOOSE US ?</h1>
+							</div>
+						</div>
+						<div class="choose_data">
+							<div class="choose_group">
+								<h3 class="choose_number">30%</h3>
+								<p class="choose_subtitle">More Traffic</p>
+							</div>
+							<div class="choose_group">
+								<h3 class="choose_number">35%</h3>
+								<p class="choose_subtitle">More Sales</p>
+							</div>
+							<div class="choose_group">
+								<h3 class="choose_number">+75%</h3>
+								<p class="choose_subtitle">Repeat Business</p>
+							</div>
+							<div class="choose_group">
+								<h3 class="choose_number">100+</h3>
+								<p class="choose_subtitle">Happy Customers</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="choose_images">
+						<img src="img/shopping.png" alt="choose image" class="choose_img">
+						
+						<div class="choose_triangle choose_triangle-1"></div>
+						<div class="choose_triangle choose_triangle-2"></div>
+						<div class="choose_triangle choose_triangle-3"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section class="pricing section" id="pricing">
+			<div class="container">
+				<div class="section_data">
+					<h2 class="section_subtitle">Packages</h2>
+					<div class="section_titles">
+						<h1 class="section_title-border">OUR</h1>
+						<h1 class="section_title">BUNDLES</h1>
+					</div>
+				</div>
+				
+				<div class="pricing_container grid">
+					<article class="pricing_card">
+						<header class="pricing_header">
+							<div class="pricing_shape">
+								<img src="img/pricing1.png" alt="" class="pricing_img">
+							</div>
+							
+							<h1 class="pricing_title">BASIC (* Starts At *)</h1>
+							<h2 class="pricing_number">$200 / MO</h2>
+						</header>
+						
+						<ul class="pricing_list">
+							<li class="pricing_item">
+								<i class="ri-checkbox-circle-line"></i> Custom Website
+							</li>
+							<li class="pricing_item">
+								<i class="ri-checkbox-circle-line"></i> Hosting Plan
+							</li>
+							<li class="pricing_item pricing_item-opacity">
+								<i class="ri-checkbox-circle-line"></i> Maintenance
+							</li>
+							<li class="pricing_item pricing_item-opacity">
+								<i class="ri-checkbox-circle-line"></i> Security Testing
+							</li>
+							<li class="pricing_item pricing_item-opacity">
+								<i class="ri-checkbox-circle-line"></i> Security Reports
+							</li>
+						</ul>
+						
+						<a class="button button_flex pricing_button open-button" onclick="openForm()">
+							Purchase Now <i class="ri-arrow-right-line"></i>
+						</a>
+					</article>
+					
+					<article class="pricing_card pricing_card-active">
+						<header class="pricing_header">
+							<div class="pricing_shape">
+								<img src="img/pricing2.png" alt="" class="pricing_img">
+							</div>
+							
+							<h1 class="pricing_title">PREMIUM (* Starts At *)</h1>
+							<h2 class="pricing_number">$350 / MO</h2>
+						</header>
+						
+						<ul class="pricing_list">
+							<li class="pricing_item">
+								<i class="ri-checkbox-circle-line"></i> Custom Website
+							</li>
+							<li class="pricing_item">
+								<i class="ri-checkbox-circle-line"></i> Hosting Plan
+							</li>
+							<li class="pricing_item">
+								<i class="ri-checkbox-circle-line"></i> Maintenance
+							</li>
+							<li class="pricing_item pricing_item-opacity">
+								<i class="ri-checkbox-circle-line"></i> Security Testing
+							</li>
+							<li class="pricing_item pricing_item-opacity">
+								<i class="ri-checkbox-circle-line"></i> Security Reports
+							</li>
+						</ul>
+						
+						<a class="button button_flex pricing_button open-button" onclick="openForm()">
+							Purchase Now <i class="ri-arrow-right-line"></i>
+						</a>
+					</article>
+					
+					<article class="pricing_card">
+						<header class="pricing_header">
+							<div class="pricing_shape">
+								<img src="img/pricing3.png" alt="" class="pricing_img">
+							</div>
+							
+							<h1 class="pricing_title">DIAMOND (* Starts At *)</h1>
+							<h2 class="pricing_number">$750 / MO</h2>
+						</header>
+						
+						<ul class="pricing_list">
+							<li class="pricing_item">
+								<i class="ri-checkbox-circle-line"></i> Custom Website
+							</li>
+							<li class="pricing_item">
+								<i class="ri-checkbox-circle-line"></i> Hosting Plan
+							</li>
+							<li class="pricing_item">
+								<i class="ri-checkbox-circle-line"></i> Maintenance
+							</li>
+							<li class="pricing_item">
+								<i class="ri-checkbox-circle-line"></i> Security Testing
+							</li>
+							<li class="pricing_item">
+								<i class="ri-checkbox-circle-line"></i> Security Reports
+							</li>
+						</ul>
+						
+						<a class="button button_flex pricing_button open-button" onclick="openForm()">
+							Purchase Now <i class="ri-arrow-right-line"></i>
+						</a>
+					</article>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer section" id="footer">
+		<div class="container">
+			<div class="footer_group">
+				<ul class="footer_social">
+					<a href="https://www.facebook.com" target="_blank" class="footer_social-link">
+						<i class="ri-facebook-circle-fill"></i>
+					</a>
+					<a href="https://www.twitter.com" target="_blank" class="footer_social-link">
+						<i class="ri-twitter-fill"></i>
+					</a>
+					<a href="https://www.instagram.com" target="_blank" class="footer_social-link">
+						<i class="ri-instagram-line"></i>
+					</a>
+				</ul>
+				
+				<span class="footer_copy">
+					&#169; 2024 KEM23 LLC. All rights reserved
+				</span>
+			</div>
+		</div>
+	</footer>
+	
+	<!-- Scroll Up -->
+	<a href="#" class="scrollup" id="scroll-up">
+		<i class="ri-arrow-up-line"></i>
+	</a>
+	
+	<script src="js/navigation.js"></script>
+	<script src="js/header_background.js"></script>
+	<script src="js/calculate.js"></script>
+	<script src="js/active_link.js"></script>
+	<script src="js/scrollreveal.min.js"></script>
+	<script src="js/scroll_up.js"></script>
+
+	<script src="js/jquery-migrate.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/typed.js"></script>
+	<script src="js/custom_typed.js"></script>
+
+	<script src="js/contact_form.js"></script>
+</body>
+
+</html>
