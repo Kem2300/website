@@ -529,6 +529,7 @@ ion-icon { pointer-events: none; }
 
 .hero img {
 	height: 100%;
+	max-height: 100%;
 	object-fit: cover;
 }
 
