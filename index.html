@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv='X-UA-Compatible' content='ie=edge'>
+	<title>KEM23 | Responsive Web Design</title>
 
 	<meta name="description" content="Responsive Web Design that focuses on the user experience (UX) Design.
 		Our websites also help businesses attract more customers and thus make more sales. 
@@ -15,387 +16,363 @@
     <meta name="keywords" content="Website, UX, Design, SEO, Increase Sales, Improve Workflow, Enhance Security">
 	
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="./assets/css/styles.css">
 	
 	<!-- Remixicon -->
 	<link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
 
-	<!-- Google Icons -->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	
-	<!-- CSS -->
-	<link rel="stylesheet" href="css/styles.css">
-	
-	<title>KEM23 | Responsive Web Design</title>
+	<!-- Google -->
+  	<link rel="preconnect" href="https://fonts.googleapis.com">
+  	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  	<!-- Preload Images -->
+  	<link rel="preload" as="image" href="./assets/images/hero-banner.png">
 </head>
 
-<body>
+<body id="top">
 	<header class="header" id="header">
-		<nav class="nav container">
-			<a href="#" class="nav_logo">
-				<img src="img/favicon.png" alt="logo"> KEM23
-			</a>
-			
-			<div class="nav_menu" id="nav-menu">
-				<ul class="nav_list">
-					<li class="nav_item">
-						<a href="#home" class="nav_link active_link">Home</a>
-					</li>
-					<li class="nav_item">
-						<a href="#services" class="nav_link">Services</a>
-					</li>
-					<li class="nav_item">
-						<a href="#pricing" class="nav_link">Packages</a>
-					</li>
+		<div class="container">
+			<nav class="nav container">
+				<a href="#" class="nav_logo">
+					<img src="./assets/images/favicon.png" alt="logo"> KEM23
+				</a>
 
-					<div class="nav_link">
-						<a class="button nav_button open-button" onclick="openForm()">
-							Contact
-						</a>
+				<div class="nav_menu" id="nav-menu">
+					<ul class="nav_list">
+						<li class="nav_item">
+							<a href="#home" class="nav_link active_link">Home</a>
+						</li>
+						<li class="nav_item">
+							<a href="#features" class="nav_link">Features</a>
+						</li>
+						<li class="nav_item">
+							<a href="#services" class="nav_link">Services</a>
+						</li>
+						
+						<button class="btn btn-primary has-before has-after" onclick="openForm()">Chat 👋</button>
+
+					</ul>
+					<div class="nav_close" id="nav-close">
+						<i class="ri-close-line"></i>
 					</div>
-				</ul>
-				
-				<div class="nav_close" id="nav-close">
-					<i class="ri-close-line"></i>
 				</div>
-			</div>
-			
-			<!-- Toggle Button -->
-			<div class="nav_toggle" id="nav-toggle">
-				<i class="ri-menu-line"></i>
-			</div>
-		</nav>
+
+				<!-- Toggle Button -->
+				<div class="nav_toggle" id="nav-toggle">
+					<i class="ri-menu-line"></i>
+				</div>
+			</nav>
+		</div>
 	</header>
 
 	<!-- The Contact form -->
-	<div class="form-popup" id="ContactForm">
-  		<div class="form-container">
-	    	<h2>Contact Us</h2>
-	    	<br><hr><br>
-	    	<p>Get a free consultation!</p>
+	<div class="modal-popup" id="ContactForm">
+  		<div class="modal-container">
+	    	<img src="./assets/images/consultation.jpg" alt="consultation">
 	    	<br>
+	    	<p><u>Get a free consultation!</u></p>
 	    	<p><b>support@kem23.com</b></p>
 	    	<br>
-	    	<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+	    	<button type="button" class="modal-button cancel" onclick="closeForm()">Close</button>
   		</div>
 	</div>
-	
-	<main class="main">
-		<section class="home section" id="home">
-			<div class="home_container container grid">
-				<div class="home_data">
-					<h1 class="home_subtitle">IMPROVE YOUR WEBSITE'S...</h1>
-					<h2 class="home_title">...<span class="typed"></span></h2>
-					<p class="home_description">
-						See how we can improve your business today! Click below to schedule a free consultation.
-					</p>
 
-					<a class="button button_flex open-button" onclick="openForm()">
-						Get Started <i class="ri-arrow-right-line"></i>
-					</a>
-				</div>
-				
-				<div class="home_images">
-					<img src="img/home.png" alt="home image" class="home_img">
-					
-					<div class="home_triangle home_triangle-3"></div>
-					<div class="home_triangle home_triangle-2"></div>
-					<div class="home_triangle home_triangle-1"></div>
-				</div>
-			</div>
-		</section>
-		
-		<section class="services section" id="services">
-			<div class="container">
-				<div class="section_data">
-					<h2 class="section_subtitle">Our Services</h2>
-					<div class="section_titles">
-						<h2 class="section_title-border">BUILD YOUR </h2>
-						<h2 class="section_title">WEBSITE</h2>
-					</div>
-				</div>
-				
-				<div class="program_container grid">
-					<article class="program_card">
-						<div class="program_shape">
-							<img src="img/program1.png" alt="program image" class="program_img">
-						</div>
-						
-						<h3 class="program_title">Website Creation</h3>
-						
-						<p class="program_description">
-							We create beautiful websites that increase sales
-							and improve workflow.
-						</p>
-						
-						<a class="program_button open-button" onclick="openForm()">
-							<i class="ri-arrow-right-line"></i>
-						</a>
-					</article>
-					
-					<article class="program_card">
-						<div class="program_shape">
-							<img src="img/program2.png" alt="program image" class="program_img">
-						</div>
-						
-						<h3 class="program_title">Website Hosting</h3>
-						
-						<p class="program_description">
-							Let us do your hosting for you so you don't have to
-							worry about configurations.
-						</p>
-						
-						<a class="program_button open-button" onclick="openForm()">
-							<i class="ri-arrow-right-line"></i>
-						</a>
-					</article>
-					
-					<article class="program_card">
-						<div class="program_shape">
-							<img src="img/program3.png" alt="program image" class="program_img">
-						</div>
-						
-						<h3 class="program_title">Ongoing Maintenance</h3>
-						
-						<p class="program_description">
-							Need someone to maintain your current website? We've got
-							you covered.
-						</p>
-						
-						<a class="program_button open-button" onclick="openForm()">
-							<i class="ri-arrow-right-line"></i>
-						</a>
-					</article>
-					
-					<article class="program_card">
-						<div class="program_shape">
-							<img src="img/program4.png" alt="program image" class="program_img">
-						</div>
-						
-						<h3 class="program_title">Security Testing</h3>
-						
-						<p class="program_description">
-							Let us ensure your website's security so you 
-							can have peace of mind.
-						</p>
-						
-						<a class="program_button open-button" onclick="openForm()">
-							<i class="ri-arrow-right-line"></i>
-						</a>
-					</article>
-				</div>
-			</div>
+	<div class="overlay" data-nav-toggler data-overlay></div>
+	<main>
+		<article>
 
-			<div class="choose section">
-				<div class="choose_overflow">
-					<div class="choose_container container grid">
-						<div class="choose_content">
-							<div class="section_data">
-								<h2 class="section_subtitle">Best Solution</h2>
-								<div class="section_titles">
-									<h2 class="section_title-border">WHY</h2>
-									<h2 class="section_title">CHOOSE US ?</h2>
-								</div>
-							</div>
-							<div class="choose_data">
-								<div class="choose_group">
-									<h3 class="choose_number">+30%</h3>
-									<p class="choose_subtitle">More Traffic</p>
-								</div>
-								<div class="choose_group">
-									<h3 class="choose_number">+35%</h3>
-									<p class="choose_subtitle">More Sales</p>
-								</div>
-								<div class="choose_group">
-									<h3 class="choose_number">+75%</h3>
-									<p class="choose_subtitle">Repeat Business</p>
-								</div>
-								<div class="choose_group">
-									<h3 class="choose_number">100+</h3>
-									<p class="choose_subtitle">Happy Customers</p>
-								</div>
-							</div>
-						</div>
-						
-						<div class="choose_images">
-							<img src="img/shopping.png" alt="choose image" class="choose_img">
-							
-							<div class="choose_triangle choose_triangle-1"></div>
-							<div class="choose_triangle choose_triangle-2"></div>
-							<div class="choose_triangle choose_triangle-3"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		<section class="pricing section" id="pricing">
-			<div class="container">
-				<div class="section_data">
-					<h2 class="section_subtitle">Packages</h2>
-					<div class="section_titles">
-						<h2 class="section_title-border">OUR</h2>
-						<h2 class="section_title">BUNDLES</h2>
-					</div>
-				</div>
-				
-				<div class="pricing_container grid">
-					<article class="pricing_card">
-						<header class="pricing_header">
-							<div class="pricing_shape">
-								<img src="img/pricing1.png" alt="pricing image" class="pricing_img">
-							</div>
-							
-							<h2 class="pricing_title">BASIC (* Starts At *)</h2>
-							<h2 class="pricing_number">$200 / MO</h2>
-						</header>
-						
-						<ul class="pricing_list">
-							<li class="pricing_item">
-								<i class="ri-checkbox-circle-line"></i> Hosting Plan
-							</li>
-							<li class="pricing_item">
-								<i class="ri-checkbox-circle-line"></i> Website Maintenance
-							</li>
-							<li class="pricing_item pricing_item-opacity">
-								<i class="ri-checkbox-circle-line"></i> Analytics & Reporting
-							</li>
-							<li class="pricing_item pricing_item-opacity">
-								<i class="ri-checkbox-circle-line"></i> Security Reports
-							</li>
-							<li class="pricing_item pricing_item-opacity">
-								<i class="ri-checkbox-circle-line"></i> Security Testing
-							</li>
-						</ul>
-						
-						<a class="button button_flex pricing_button open-button" onclick="openForm()">
-							Purchase Now <i class="ri-arrow-right-line"></i>
-						</a>
-					</article>
-					
-					<article class="pricing_card pricing_card-active">
-						<header class="pricing_header">
-							<div class="pricing_shape">
-								<img src="img/pricing2.png" alt="pricing image" class="pricing_img">
-							</div>
-							
-							<h2 class="pricing_title">PREMIUM (* Starts At *)</h2>
-							<h2 class="pricing_number">$350 / MO</h2>
-						</header>
-						
-						<ul class="pricing_list">
-							<li class="pricing_item">
-								<i class="ri-checkbox-circle-line"></i> Hosting Plan
-							</li>
-							<li class="pricing_item">
-								<i class="ri-checkbox-circle-line"></i> Website Maintenance
-							</li>
-							<li class="pricing_item">
-								<i class="ri-checkbox-circle-line"></i> Analytics & Reporting
-							</li>
-							<li class="pricing_item pricing_item-opacity">
-								<i class="ri-checkbox-circle-line"></i> Security Reports
-							</li>
-							<li class="pricing_item pricing_item-opacity">
-								<i class="ri-checkbox-circle-line"></i> Security Testing
-							</li>
-						</ul>
-						
-						<a class="button button_flex pricing_button open-button" onclick="openForm()">
-							Purchase Now <i class="ri-arrow-right-line"></i>
-						</a>
-					</article>
-					
-					<article class="pricing_card">
-						<header class="pricing_header">
-							<div class="pricing_shape">
-								<img src="img/pricing3.png" alt="pricing image" class="pricing_img">
-							</div>
-							
-							<h2 class="pricing_title">DIAMOND (* Starts At *)</h2>
-							<h2 class="pricing_number">$750 / MO</h2>
-						</header>
-						
-						<ul class="pricing_list">
-							<li class="pricing_item">
-								<i class="ri-checkbox-circle-line"></i> Hosting Plan
-							</li>
-							<li class="pricing_item">
-								<i class="ri-checkbox-circle-line"></i> Website Maintenance
-							</li>
-							<li class="pricing_item">
-								<i class="ri-checkbox-circle-line"></i> Analytics & Reporting
-							</li>
-							<li class="pricing_item">
-								<i class="ri-checkbox-circle-line"></i> Security Reports
-							</li>
-							<li class="pricing_item">
-								<i class="ri-checkbox-circle-line"></i> Security Testing
-							</li>
-						</ul>
-						
-						<a class="button button_flex pricing_button open-button" onclick="openForm()">
-							Purchase Now <i class="ri-arrow-right-line"></i>
-						</a>
-					</article>
-				</div>
-			</div>
+			<!-- Hero -->
+			<section class="section hero" id="home" aria-label="hero">
+				<div class="container">
+					<div class="hero-content">
+						<div class="text-content">
+							<h1 class="h1 hero-title">
+								Creating Digital <span class="has-before">Solutions</span> for Your Business.
+							</h1>
 
-			<div class="calculate section">
-				<div class="calculate_container container grid">
-					<div class="calculate_content">
-						<div class="section_titles">
-							<h2 class="section_title-border">GET STARTED</h2>
-							<h2 class="section_title">TODAY</h2>
+							<p class="hero-text">
+								At KEM23, our solutions help businesses acquire more customers and streamline their sales processes. You can think of your website as your own personal assistant who's working for you <b>24/7</b> to make your life <b>EASIER</b>. 
+
+								<br><br>Click the button below to see the big-picture. Then get in contact with us to learn how we can help your business achieve it's goals.
+							</p>
+							<div class="wapper">
+								<a href="#features" class="btn btn-primary has-before has-after">How it Works</a>
+							</div>
+							<ul class="social-list">
+              					<li>
+                					<a href="https://www.facebook.com" class="social-link" style="--color: hsl(241, 77%, 63%);">
+                  						<ion-icon name="logo-facebook"></ion-icon>
+                  						<span class="span">Facebook</span>
+                					</a>
+              					</li>
+              					<li>
+                					<a href="https://www.youtube.com" class="social-link" style="--color: hsl(0, 100%, 50%);">
+                  						<ion-icon name="logo-youtube"></ion-icon>
+                  						<span class="span">Youtube</span>
+                					</a>
+              					</li>
+              					<li>
+                					<a href="https://www.twitter.com" class="social-link" style="--color: hsl(203, 89%, 53%);">
+                  						<ion-icon name="logo-twitter"></ion-icon>
+                  						<span class="span">Twitter</span>
+                					</a>
+              					</li>
+            				</ul>
 						</div>
-						
-						<p class="calculate_description">
-							All our websites are designed with <b>UX</b> in mind so your users have the
-							<b>best experience possible</b>. <br><br>
-							We also integrate the latest <b>SEO</b> practices so your website
-							climbs to the <b>top of the search results</b> as <b>quickly</b> as possible. <br><br>
-							This all translates into <b>MORE SALES</b> and <b>LESS WORK</b> for <b>YOU</b>! <br><br>
-							No need to try and juggle multiple difference vendors for different services. Consider us your <b>one-stop-shop</b> for all your web design needs.<br><br>
-							Click the button below to get started with a free consultation. All our solutions are tailored to the individual's needs so we would like to take some time to get to know you and your company before we begin.
-						</p>
-						
-						<div class="calculate_form">
-							<button type="submit" class="button button_flex open-button" onclick="openForm()">
-								Get Started <i class="ri-arrow-right-line"></i>
-							</button>
+						<div class="image-content">
+							<img src="./assets/images/hero-banner.jpg">
 						</div>
+	    			</div>
+	    		</div>
+			</section>
+
+			<!-- Features -->
+			<section class="section features" id="features" aria-label="features">
+				<div class="container">
+					<div class="buffer-container"></div> <!-- So header doesn't overlap content -->
+					<div class="features-crown">
+						<i class="ri-vip-crown-line"></i>
 					</div>
-					
-					<img src="img/shopping3.png" alt="calculate image" class="calculate_img">
+					<h2 class="h2 section-title text-center"><span class="has-before">Get AHEAD of the Game</span></h2>
+					<div class="container">
+						<div class="grid">
+							<div>
+								<div class="features-card">
+									<div class="card-icon">
+										<i class="ri-terminal-window-fill"></i>
+									</div>
+									<h3 class="h3">
+										<div class="card-title">Web & Mobile Development</div>
+	                				</h3>
+	              				</div>
+	            			</div>
+	            			<div>
+								<div class="features-card">
+									<div class="card-icon">
+										<i class="ri-line-chart-line"></i>
+									</div>
+									<h3 class="h3">
+										<div class="card-title">Search Engine Optimization</div>
+	                				</h3>
+	              				</div>
+	            			</div>
+	            			<div>
+								<div class="features-card">
+									<div class="card-icon">
+										<i class="ri-cursor-line"></i>
+									</div>
+									<h3 class="h3">
+										<div class="card-title">Strategically Placed CTAs</div>
+	                				</h3>
+	              				</div>
+	            			</div>
+	            			<div>
+								<div class="features-card">
+									<div class="card-icon">
+										<i class="ri-settings-5-fill"></i>
+									</div>
+									<h3 class="h3">
+										<div class="card-title">Improved Workflow</div>
+	                				</h3>
+	              				</div>
+	            			</div>
+	            			<div>
+								<div class="features-card">
+									<div class="card-icon">
+										<i class="ri-money-dollar-circle-fill"></i>
+									</div>
+									<h3 class="h3">
+										<div class="card-title">Automated Sales Processes</div>
+	                				</h3>
+	              				</div>
+	            			</div>
+	            			<div>
+								<div class="features-card">
+									<div class="card-icon">
+										<i class="ri-user-star-fill"></i>
+									</div>
+									<h3 class="h3">
+										<div class="card-title">Customer Review Management</div>
+	                				</h3>
+	              				</div>
+	            			</div>
+	            		</div>
+          			</div>
 				</div>
-			</div>
-		</section>
+			</section>
+
+			<!-- Services -->
+			<section class="section services" id="services">
+				<div class="container">
+					<div class="buffer-container"></div> <!-- So header doesn't overlap content -->
+					<div class="services-content">
+						<div class="image-content">
+							<img src="./assets/images/about.jpg"alt="about us">
+						</div>
+						<div class="text-content">
+							<h2 class="h2 services-title">
+								<span class="has-before">Who We Are</span>
+							</h2>
+
+							<ul class="services-list">
+              					<li>
+                					<div class="services-card">
+                  						<div class="card-icon" style="--color: 188, 64%, 60%;">
+                    						<ion-icon name="briefcase" aria-hidden="true"></ion-icon>
+                  						</div>
+	                  					<div>
+		                   	 				<h3 class="h3 card-title">Professional</h3>
+		                    				<p class="card-text">
+		                      					At KEM23, your deadlines and personal goals are always respected. Quality of service is our highest priority.
+		                    				</p>
+	                  					</div>
+	                  				</div>
+                 				</li>
+              					<li>
+                					<div class="services-card">
+                 						<div class="card-icon" style="--color: 241, 77%, 63%;">
+                    						<ion-icon name="people-sharp" aria-hidden="true"></ion-icon>
+                  						</div>
+                  						<div>
+                    						<h3 class="h3 card-title">Dedicated Team</h3>
+
+                    						<p class="card-text">
+                      							Our team of experts all work together to bring their knowledge and experience to <b>YOUR</b> business. Two heads are always greater than one.
+                    						</p>
+                  						</div>
+                					</div>
+              					</li>
+              					<li>
+                					<div class="services-card">
+                  						<div class="card-icon" style="--color: 0, 100%, 69%;">
+                      						<ion-icon name="headset-sharp" aria-hidden="true"></ion-icon>
+                  						</div>
+
+                  						<div>
+                    						<h3 class="h3 card-title">Customer Support</h3>
+
+                    						<p class="card-text">
+                      							Our dedicated team of specialists are at the ready to help you with whatever questions you may have. 
+                    						</p>
+                  						</div>
+                					</div>
+              					</li>
+            				</ul>
+            			</div>
+					</div>
+	    		</div>
+	    		<div class="section project" id="project" aria-label="project">
+					<h3 class="h2 section-title text-center"><span class="has-before"><i class="ri-settings-5-fill"></i> What We Do <i class="ri-settings-5-fill"></i></span></h3>
+        			<div class="container">
+						<ul class="grid">
+	            			<li>
+	              				<div class="project-card">
+	                				<figure class="card-banner img-holder">
+	                  					<img src="./assets/images/design.jpg" loading="lazy" alt="Web & Mobile Development" class="img-cover">
+	                				</figure>
+
+                					<div class="card-content">
+                  						<h3 class="h3">
+                    						<a class="card-title open-button" onclick="openForm()">Web & Mobile Development</a>
+                  						</h3>
+                					</div>
+
+              					</div>
+            				</li>
+
+           					 <li>
+              					<div class="project-card">
+                					<figure class="card-banner img-holder">
+                  						<img src="./assets/images/graphic.jpg" loading="lazy" alt="Graphic Design" class="img-cover">
+                					</figure>
+
+                					<div class="card-content">
+                  						<h3 class="h3">
+                    						<a class="card-title open-button" onclick="openForm()">Graphic Design</a>
+                  						</h3>
+                					</div>
+              					</div>
+            				</li>
+
+            				<li>
+             	 				<div class="project-card">
+                					<figure class="card-banner img-holder">
+                  						<img src="./assets/images/servers.jpg" loading="lazy" alt="Web Hosting" class="img-cover">
+                					</figure>
+
+                					<div class="card-content">
+                  						<h3 class="h3">
+                    						<a class="card-title open-button" onclick="openForm()">Web Hosting</a>
+                  						</h3>
+                					</div>
+              					</div>
+            				</li>
+
+            				<li>
+              					<div class="project-card">
+                					<figure class="card-banner img-holder">
+                  						<img src="./assets/images/designer.jpg" loading="lazy" alt="Website Maintenance" class="img-cover">
+                					</figure>
+
+                					<div class="card-content">
+                  						<h3 class="h3">
+                    						<a class="card-title open-button" onclick="openForm()">Website Management</a>
+                  						</h3>
+                					</div>
+             	 				</div>
+            				</li>
+
+            				<li>
+              					<div class="project-card">
+                					<figure class="card-banner img-holder">
+                  						<img src="./assets/images/security.jpg" loading="lazy" alt="Security Reports" class="img-cover">
+                					</figure>
+                					<div class="card-content">
+                  						<h3 class="h3">
+                    						<a class="card-title open-button" onclick="openForm()">Security Reports</a>
+                  						</h3>
+                					</div>
+              					</div>
+            				</li>
+
+            				<li>
+              					<div class="project-card">
+                					<figure class="card-banner img-holder">
+                  						<img src="./assets/images/security3.jpg" loading="lazy" alt="Security Testing" class="img-cover">
+                					</figure>
+                					<div class="card-content">
+                  						<h3 class="h3">
+                    						<a class="card-title open-button" onclick="openForm()">Security Testing</a>
+                  						</h3>
+               	 					</div>
+              					</div>
+            				</li>
+          				</ul>
+        			</div>
+    			</div>
+	    	</section>
+
+		</article>
 	</main>
 
-	<footer class="footer section" id="footer">
-		<div class="container">
-			<div class="footer_group">
-				<ul class="footer_social">
-					<a href="https://www.facebook.com" target="_blank" class="footer_social-link">
-						<i class="ri-facebook-circle-fill"></i>
-					</a>
-					<a href="https://www.twitter.com" target="_blank" class="footer_social-link">
-						<i class="ri-twitter-fill"></i>
-					</a>
-					<a href="https://www.instagram.com" target="_blank" class="footer_social-link">
-						<i class="ri-instagram-line"></i>
-					</a>
-				</ul>
-				
-				<span class="footer_copy">
-					&#169; 2024 KEM23 LLC. All rights reserved
-				</span>
-			</div>
-		</div>
-	</footer>
+	<footer>
+        <div class="footer-content">
+            <p>&#169; 2024 KEM23 LLC. All rights reserved</p>
+        </div>
+    </footer>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/custom.js"></script>
+	<a href="#top" class="back-top-btn has-after" aria-label="back to top" data-back-top-btn>
+    	<ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+  	</a>
+
+	<script src="./assets/js/scripts.js"></script>
+
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
