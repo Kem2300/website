@@ -528,7 +528,7 @@ ion-icon { pointer-events: none; }
 .hero { padding-block-start: var(--section-padding); }
 
 .hero img {
-	height: 850px;
+	height: 780px;
 	object-fit: cover;
 	overflow: hidden;
 }
