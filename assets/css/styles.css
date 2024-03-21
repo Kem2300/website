@@ -627,12 +627,18 @@ ion-icon { pointer-events: none; }
 }
 
 @media only screen and (max-width: 503px) {
+	.hero-title { 
+    	font-size: var(--font-size-9);
+    }
+    .hero-text { 
+    	font-size: var(--font-size-12);
+    }
 	.hero-content {
         text-align: center;
     }
     .hero-content .btn {
         margin: auto; /* center button */
-        font-size: var(--font-size-11);
+        font-size: var(--font-size-12);
     }
 }
 
@@ -756,13 +762,11 @@ ion-icon { pointer-events: none; }
   	border-radius: 50%;
   	margin-block-end: 20px;
   	max-width: max-content;
-  	transition: var(--transition-2);
-  	background-color: hsla(var(--color), 0.15);
+  	background-color: hsla(var(--color));
 }
 
 .services-card .card-icon ion-icon {
-  	color: hsl(var(--color));
-  	transition: var(--transition-1);
+  	color: var(--white);
 }
 
 .services .card-title {
@@ -772,15 +776,9 @@ ion-icon { pointer-events: none; }
 
 .services-card .card-text {
 	margin-block-start: 10px;
-  	color: var(--cool-gray);
+  	color: var(--slate-gray);
   	font-size: var(--font-size-10);
 }
-
-.services-card:is(:hover, :focus) .card-icon {
-  	box-shadow: inset 0 0 0 30px hsla(var(--color), 0.9);
-}
-
-.services-card:is(:hover, :focus) .card-icon ion-icon { color: var(--white); }
 
 @media only screen and (max-width: 1600px) {
 	.services-title {
@@ -905,6 +903,11 @@ ion-icon { pointer-events: none; }
 
 .project .section-title { margin-block: 20px 60px; }
 
+.project .card-title {
+	color: var(--white);
+	cursor: pointer;
+}
+
 .project-card {
   	position: relative;
   	overflow: hidden;
@@ -915,25 +918,29 @@ ion-icon { pointer-events: none; }
 	transition: var(--transition-2); 
 	height: 300px;
   	object-fit: cover;
+  	filter: brightness(.6);
 }
 
 .project-card:is(:hover, :focus-within) .card-banner img {
   	transform: scale(1.1);
-  	filter: brightness(0.8);
+  	filter: brightness(.8);
 }
 
 .project-card .card-content {
   	top: 50%;
   	left: 20px;
   	right: 20px;
-  	opacity: 0;
-  	padding: 30px 20px;
+  	/* opacity: 0; */
+  	padding: 5px 1px;
   	text-align: center;
   	position: absolute;
+  	opacity: .8;
   	border-radius: var(--radius-10);
-  	transform: translateY(calc(-50% + 20px));
+  	/* transform: translateY(calc(-50% + 20px)); */
+  	transform: translateY(calc(-50%));
   	transition: var(--transition-2);
-  	background-color: var(--mustard);
+  	background-color: var(--primary-color-dark);
+  	color: var(--white);
 }
 
 .project-card .card-tag {
@@ -942,7 +949,7 @@ ion-icon { pointer-events: none; }
 }
 
 .project-card:is(:hover, :focus-within) .card-content {
-  	opacity: 1;
+  	/* opacity: 1; */
   	transform: translateY(-50%);
 }
 
@@ -962,8 +969,8 @@ ion-icon { pointer-events: none; }
 		width: 100%;
 	}
 
-	.features .section-title {
-		font-size: var(--font-size-4);
+	.project .section-title {
+		font-size: var(--font-size-3);
 	}
 }
 
