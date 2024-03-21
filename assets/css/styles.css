@@ -628,7 +628,7 @@ ion-icon { pointer-events: none; }
 
 @media only screen and (max-width: 503px) {
 	.hero-title { 
-    	font-size: var(--font-size-9);
+    	font-size: var(--font-size-4);
     }
     .hero-text { 
     	font-size: var(--font-size-12);
@@ -657,7 +657,7 @@ ion-icon { pointer-events: none; }
 
 .features .section-title { 
 	padding-bottom: 75px; 
-	font-size: var(--font-size-3);
+	font-size: var(--font-size-2);
 }
 
 .features .grid { grid-template-columns: repeat(3, 1fr); }
@@ -705,6 +705,10 @@ ion-icon { pointer-events: none; }
 
 @media only screen and (max-width: 1378px) {
 	.features .grid { grid-template-columns: repeat(2, 1fr); }
+
+	.features .section-title { 
+    	font-size: var(--font-size-3);
+    }
 }
 
 @media only screen and (max-width: 1004px) {
@@ -740,6 +744,7 @@ ion-icon { pointer-events: none; }
 
 .services-title {
 	margin-bottom: 20px;
+	font-size: var(--font-size-2);
 }
 
 .services-text {
@@ -820,10 +825,6 @@ ion-icon { pointer-events: none; }
         flex: initial;
     }
 
-    .services-title {
-		font-size: var(--font-size-2);
-	}
-
 	.services .card-title {
 		font-size: var(--font-size-8);
 	}
@@ -838,10 +839,6 @@ ion-icon { pointer-events: none; }
 }
 
 @media only screen and (max-width: 700px) {
-    .services-title {
-		font-size: var(--font-size-3);
-	}
-
 	.services .card-title {
 		font-size: var(--font-size-10);
 	}
@@ -858,7 +855,7 @@ ion-icon { pointer-events: none; }
 @media only screen and (max-width: 565px) {
 	.services-title {
 		margin-top: 50px;
-		font-size: var(--font-size-5);
+		font-size: var(--font-size-4);
 	}
 
     .services .text-content {
@@ -900,7 +897,10 @@ ion-icon { pointer-events: none; }
 	margin-right: 35px;
 }
 
-.project .section-title { margin-block: 20px 60px; }
+.project .section-title { 
+	margin-block: 20px 60px; 
+	font-size: var(--font-size-2);
+}
 
 .project .card-title {
 	color: var(--white);
@@ -956,7 +956,13 @@ ion-icon { pointer-events: none; }
 	.project {
 		height: 100%;
 	}
-	.project .grid { grid-template-columns: repeat(2, 1fr); }
+
+	.project .section-title { 
+		font-size: var(--font-size-3);
+	}
+	.project .grid { 
+		grid-template-columns: repeat(2, 1fr); 
+	}
 }
 
 @media only screen and (max-width: 700px) {
@@ -969,7 +975,7 @@ ion-icon { pointer-events: none; }
 	}
 
 	.project .section-title {
-		font-size: var(--font-size-3);
+		font-size: var(--font-size-4);
 	}
 	.project .card-title {
 		padding: 0;
