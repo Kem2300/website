@@ -929,8 +929,9 @@ ion-icon { pointer-events: none; }
 }
 
 .project .card-title {
-	color: var(--white);
 	cursor: pointer;
+	color: var(--white);
+	font-size: var(--font-size-9);
 }
 
 .project-card {
@@ -1011,6 +1012,9 @@ ion-icon { pointer-events: none; }
 	}
 	.project .card-title {
 		padding: 0;
+	}
+	.project .card-title {
+		font-size: var(--font-size-11);
 	}
 }
 
