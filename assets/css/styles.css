@@ -1,0 +1,697 @@
+/* Define primary and secondary colors using CSS variables */
+:root {
+    /* ------------ HEADER ------------ */
+    --header-height:3.5rem;
+
+    /* ------------ CUSTOM CONFIGURATION ------------ */
+    --primary-color: var(--majorelle-blue);
+    --primary-color-light: var(--sky-blue-crayola);
+    --primary-color-dark: var(--blue-ryb_80);
+    --text-color-light: var(--white);
+    --text-color-dark: var(--raisin-black-2);
+    --body-color: var(--white);
+    --body-color-alt: var(--cool-gray);
+
+    /* ------------ FONT ------------ */
+    --body-font: 'Red Hat Display', sans-serif;
+    --second-font: 'Kaushan Script', cursive;
+
+    /* ------------ TYPOGRAPHY ------------ */
+    --font-size-1: 4rem;
+    --font-size-2: 3.5rem;
+    --font-size-3: 2.4rem;
+    --font-size-4: 2.2rem;
+    --font-size-5: 2rem;
+    --font-size-6: 1.8rem;
+    --font-size-7: 1.7rem;
+    --font-size-8: 1.5rem;
+    --font-size-9: 1.4rem;
+    --font-size-10: 1.25rem;
+    --font-size-11: 1rem;
+    --font-size-12: .938rem;
+    --font-size-13: .813rem;
+
+    /* ------------ WEIGHT ------------ */
+    --boldest-font: 900;
+    --very-bold-font: 700;
+    --bold-font: 500;
+
+    /* ------------ GRADIENTS ------------ */
+    --gradient: radial-gradient(ellipse at center, hsla(0, 0%, 0%, 0.25), transparent 80%);
+
+    /* ------------ SPACING ------------ */
+    --section-padding: 100px;
+
+    /* ------------ SHADOWS ------------ */
+    --shadow-1: 0px 2px 50px hsla(223, 40%, 76%, 0.3);
+    --shadow-2: 0px -2px 12px hsl(252, 29%, 93%);
+    --shadow-3: 0px 4px 4px hsla(231, 20%, 49%, 0.06);
+    --shadow-4: 0px 15px 30px hsla(210, 30%, 32%, 0.05);
+    --shadow-5: 0px 15px hsla(241, 62%, 34%, 0.04);
+
+    /* ------------ RADIUS ------------ */
+    --radius-8: 8px;
+    --radius-10: 10px;
+    --radius-15: 15px;
+    --radius-20: 20px;
+
+    /* ------------ TRANSITIONS ------------ */
+    --transition-1: 0.25s ease;
+    --transition-2: 0.5s ease;
+    --to-top-transition: top 0.3s;
+    --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+    --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+
+    /* ------------ Z INDEX ------------ */
+    --z-1:1;
+    --z-2:10;
+    --z-3:100;
+    --z-4: 900;
+    --z-5: 1000;
+
+    /* ------------ COLORS ------------ */
+    --sky-blue-crayola: hsl(188, 64%, 60%);
+    --raisin-black_90: hsla(240, 8%, 12%, 0.9);
+    --raisin-black-1: hsl(240, 8%, 17%);
+    --raisin-black-2: hsl(240, 8%, 12%);
+    --majorelle-blue: hsl(241, 77%, 63%);
+    --blue-ryb_80: hsla(241, 88%, 60%, 0.8);
+    --bittersweet: hsl(0, 100%, 69%);
+    --eerie-black: hsl(0, 0%, 13%);
+    --ghost-white: hsl(230, 60%, 98%);
+    --light-gray: hsl(0, 0%, 80%);
+    --slate-gray: hsl(225, 8%, 48%);
+    --cool-gray: hsl(225, 11%, 59%);
+    --gainsboro: hsl(217, 16%, 90%);
+    --mustard: hsl(47, 100%, 69%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --onyx: hsl(240, 5%, 26%);
+    --jet: hsl(0, 0%, 21%);
+}
+
+
+
+/* =============== GENERAL =============== */
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--body-font);
+    background-color: var(--body-color); /* Use primary color variable */
+    color: var(--text-color-dark); /* Use secondary color variable */
+}
+
+section {
+    flex: 1; /* Allow sections to take up available space */
+    margin-top: 60px; /* Adjust for navbar height */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* 
+#hero, #about, #services, #contact {
+    min-height: 100vh;
+}
+*/
+
+#hero, #services, #contact {
+    min-height: 100vh;
+}
+
+.text-coloring {
+    color: var(--primary-color);
+}
+
+
+
+/* =============== NAVIGATION =============== */
+.navbar {
+    top: -100px; /* Hide navbar initially */
+    width: 100%;
+    height: 75px;
+    padding: 10px 0;
+    position: fixed;
+    z-index: var(--z-5);
+    transition: var(--to-top-transition);
+    background-color: var(--raisin-black-2); 
+}
+
+.navbar.visible {
+    top: 0; /* Show navbar when scrolling */
+}
+
+.nav-container {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand img {
+    height: 75px;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: var(--font-size-8);
+}
+
+.navbar ul li a:hover {
+    color: var(--primary-color-dark);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.bar {
+    margin: 4px 0;
+    width: 25px;
+    height: 3px;
+    transition: 0.4s;
+    background-color: var(--white);
+}
+
+.overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Initially hidden */
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: var(--z-4); /* Ensure overlay is behind menu but above content */
+}
+
+.overlay.active {
+    display: block; /* Show overlay when menu is active */
+}
+
+.navbar ul li a.active {
+    color: var(--primary-color); /* Color for active link */
+}
+
+
+
+/* =============== HERO =============== */
+.hero {
+    padding: 0; /* gets rid of section padding that screws up it taking up the whole page */
+    margin-top: auto; /* takes up the extra space at the top */
+    display: flex;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../../assets/images/hero-banner.jpg'); /* Replace with your image URL */
+}
+
+.hero-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75); /* Adjust opacity as needed */
+}
+
+.hero-content {
+    margin-bottom: 150px; /* Brings the content up a bit */
+    position: relative;
+    z-index: var(--z-4);
+    color: var(--white);
+}
+
+.hero-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+
+.hero-btn:hover {
+    background-color: var(--primary-color-dark);
+}
+
+
+
+/* =============== ABOUT =============== */
+.about {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 50px;
+    min-height: calc(100vh - 175px); /* Set minimum height to fill remaining viewport minus the navbar (top: -100px, height: 75px) */
+    background-color: var(--ghost-white); /* Light gray background */
+}
+
+.about h2 {
+    margin-bottom: 30px; /* Space below heading */
+}
+
+.about p {
+    max-width: 600px;
+    margin: 0 auto 65px; /* Center and add space below paragraph */
+    color: var(--text-color-dark); /* Adjust text color */
+}
+
+.about-grid {
+    gap: 30px; /* Gap between grid items */
+    margin-top: 30px; /* Space above grid */
+    display: grid;
+    justify-items: center; /* Center items horizontally */
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */ 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid layout */ 
+}
+
+.about-item {
+    padding: 20px;
+    text-align: center; /* Center align content within each item */
+    background-color: var(--body-color); /* White background for each item */
+    border-radius: var(--radius-10); /* Rounded corners */
+    box-shadow: var(--shadow-2); /* Soft shadow */
+}
+
+.about-item img {
+    width: 100%; /* Make the image fill the entire width of its container */
+    height: 250px;
+    margin-bottom: 15px; /* Space below icon */
+
+    display: block; /* Prevent inline gaps */
+    object-fit: cover; /* Ensure images cover the entire container */
+}
+
+.about-item h3 {
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.about-item p {
+    color: var(--slate-gray); /* Adjust text color */
+    margin-bottom: 20px;
+}
+
+.about h2 {
+    position: relative; /* Ensure the line is positioned relative to the h2 */
+}
+
+.about h2::after {
+    height: 3px; /* Adjust line thickness as needed */
+    width: 150px; /* Adjust line width as needed */
+    left: 50%; /* Center the line */
+    bottom: -10px; /* Adjust distance from text */
+    content: ''; /* Required for pseudo-elements */
+    display: block; /* Ensure it takes full width */
+    position: absolute; /* Position relative to h2 */
+    transform: translateX(-50%); /* Center the line horizontally */
+    background-color: var(--primary-color-dark); /* Choose your desired color */
+}
+
+
+
+/* =============== SERVICES =============== */
+.services {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 50px;
+    min-height: calc(100vh - 175px); /* Set minimum height to fill remaining viewport minus the navbar (top: -100px, height: 75px) */
+    background-color: var(--body-color); /* Light gray background */
+}
+
+section .services {
+    display: grid;
+    place-items: center;
+}
+
+.services h2 {
+    position: relative; /* Ensure the line is positioned relative to the h2 */
+    margin-bottom: 40px; /* Space below heading */
+}
+
+.services h2::after {
+    height: 3px; /* Adjust line thickness as needed */
+    width: 175px; /* Adjust line width as needed */
+    left: 50%; /* Center the line */
+    bottom: -10px; /* Adjust distance from text */
+    content: ''; /* Required for pseudo-elements */
+    display: block; /* Ensure it takes full width */
+    position: absolute; /* Position relative to h2 */
+    transform: translateX(-50%); /* Center the line horizontally */
+    background-color: var(--primary-color-dark); /* Choose your desired color */
+}
+
+.services p {
+    margin-bottom: 65px;
+}
+
+.services .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.services .column {
+    width: 100%;
+    padding: 0 1em 1em 1em;
+    text-align: center;
+    box-sizing: border-box;
+}
+.services .card {
+    width: 100%;
+    height: 100%;
+    padding: 2em 1.5em;
+    background: linear-gradient(var(--body-color) 50%, var(--primary-color) 50%);
+    background-size: 100% 200%;
+    background-position: 0 2.5%;
+    border-radius: 5px;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+
+.services h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 1em 0;
+}
+
+.services p {
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+}
+
+.services .icon-wrapper {
+    position: relative;
+    margin: auto;
+    font-size: 30px;
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: 0.5s;
+    color: var(--white);
+    background-color: var(--primary-color-light);
+}
+
+.services .card:hover {
+    background-position: 0 100%;
+}
+
+.services .card:hover .icon-wrapper {
+    color: var(--primary-color-light);
+    background-color: var(--body-color);
+}
+
+.services .card:hover h3 {
+    color: var(--body-color);
+}
+.services .card:hover p {
+    color: var(--body-color);
+}
+
+
+
+/* =============== CONTACT =============== */
+.contact {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 50px;
+    min-height: calc(100vh - 175px); /* Set minimum height to fill remaining viewport minus the navbar (top: -100px, height: 75px) */
+    background-color: var(--ghost-white);
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--body-color);
+    border: 2px solid var(--primary-color-dark);
+    border-radius: var(--radius-10);
+    box-shadow: var(--shadow-2);
+}
+
+.contact form div {
+    margin-bottom: 20px;
+}
+
+.contact label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.required {
+    color: red;
+    margin-left: 5px;
+}
+
+.contact input,
+.contact select,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--primary-color-dark);
+    border-radius: var(--radius-10);
+    box-sizing: border-box;
+}
+
+.contact textarea {
+    resize: vertical;
+}
+
+.contact-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color-dark);
+    color: white;
+    border: none;
+    border-radius: var(--radius-10);
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    background-color: var(--primary-color);
+}
+
+.success-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: var(--body-color);
+    border: 1px solid var(--primary-color-dark);
+    border-radius: var(--radius-10);
+    box-shadow: var(--shadow-2);
+    z-index: 1000;
+    text-align: center;
+}
+
+.success-popup p {
+    margin-bottom: 15px;
+}
+
+.success-popup button {
+    padding: 10px;
+    background-color: var(--primary-color-dark);
+    color: white;
+    border: none;
+    border-radius: var(--radius-10);
+    cursor: pointer;
+}
+
+.contact h2 {
+    position: relative; /* Ensure the line is positioned relative to the h2 */
+    margin-bottom: 40px; /* Space below heading */
+}
+
+.contact h2::after {
+    height: 3px; /* Adjust line thickness as needed */
+    width: 175px; /* Adjust line width as needed */
+    left: 50%; /* Center the line */
+    bottom: -10px; /* Adjust distance from text */
+    content: ''; /* Required for pseudo-elements */
+    display: block; /* Ensure it takes full width */
+    position: absolute; /* Position relative to h2 */
+    transform: translateX(-50%); /* Center the line horizontally */
+    background-color: var(--primary-color-dark); /* Choose your desired color */
+}
+
+.contact p {
+    margin-bottom: 65px;
+}
+
+
+
+/* =============== FOOTER =============== */
+.footer {
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    position: relative;
+    text-align: center;
+    background-color: var(--raisin-black-2); /* Solid black background */
+    color: var(--white);
+}
+
+
+
+/* =============== SCROLL-TO-TOP =============== */
+.scroll-to-top {
+    right: 20px;
+    padding: 10px;
+    border-radius: 25%;
+    border: none;
+    display: none; /* Initially hidden */
+    cursor: pointer;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Add transform and box-shadow transitions */
+    bottom: calc(5vh + 20px); /* Adjust position above the footer */
+    z-index: var(--z-5);
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for the button */
+}
+
+.scroll-to-top:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-5px); /* Lift the button slightly on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* Adjust shadow on hover */
+}
+
+.scroll-to-top svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--white);
+}
+
+
+
+
+/* =============== RESPONSIVE =============== */
+@media (max-width: 768px) {
+    .navbar ul {
+        top: 75px;
+        left: -100%;
+        width: 100%;
+        position: absolute;
+        flex-direction: column;
+        transition: all 0.5s ease;
+        background-color: var(--raisin-black-2);
+        padding: 50px 0; /* Increase padding for more spacing */
+        text-align: center; /* Center align the menu items */
+    }
+
+    .navbar ul.active {
+        left: 0;
+    }
+
+    .navbar ul li {
+        margin: 20px 0; /* Adjust margin for spacing between menu items */
+        position: relative; /* Ensure relative positioning for pseudo-element */
+    }
+
+    .navbar ul li::before {
+        content: '';
+        position: absolute;
+        bottom: -20px; /* Adjust the distance of the line from the link */
+        left: 50%; /* Center the line horizontally */
+        transform: translateX(-50%);
+        width: 80%; /* Adjust the width of the line */
+        max-width: 200px; /* Set a maximum width for the line */
+        height: 1px; /* Adjust the height of the line */
+        background-color: rgba(255, 255, 255, 0.3); /* Line color */
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center; /* Center align the toggle button */
+        justify-content: center; /* Center align horizontally */
+    }
+
+    .menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: 5px;
+        transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .menu-toggle.open .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.open .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    section .services {
+        padding: 0 2em;
+    }
+    .services .column {
+        flex: 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    section .services {
+        padding: 1em 3em;
+    }
+    .services .column {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+}
+
+
+
+
+
+
+/* Define primary and secondary colors using CSS variables */ :root { /* ------------ HEADER ------------ */ --header-height:3.5rem;  /* ------------ CUSTOM CONFIGURATION ------------ */ --primary-color: var(--majorelle-blue); --primary-color-light: var(--sky-blue-crayola); --primary-color-dark: var(--blue-ryb_80); --text-color-light: var(--white); --text-color-dark: var(--raisin-black-2); --body-color: var(--white); --body-color-alt: var(--cool-gray);  /* ------------ FONT ------------ */ --body-font: 'Red Hat Display', sans-serif; --second-font: 'Kaushan Script', cursive;  /* ------------ TYPOGRAPHY ------------ */ --font-size-1: 4rem; --font-size-2: 3.5rem; --font-size-3: 2.4rem; --font-size-4: 2.2rem; --font-size-5: 2rem; --font-size-6: 1.8rem; --font-size-7: 1.7rem; --font-size-8: 1.5rem; --font-size-9: 1.4rem; --font-size-10: 1.25rem; --font-size-11: 1rem; --font-size-12: .938rem; --font-size-13: .813rem;  /* ------------ WEIGHT ------------ */ --boldest-font: 900; --very-bold-font: 700; --bold-font: 500;  /* ------------ GRADIENTS ------------ */ --gradient: radial-gradient(ellipse at center, hsla(0, 0%, 0%, 0.25), transparent 80%);  /* ------------ SPACING ------------ */ --section-padding: 100px;  /* ------------ SHADOWS ------------ */ --shadow-1: 0px 2px 50px hsla(223, 40%, 76%, 0.3); --shadow-2: 0px -2px 12px hsl(252, 29%, 93%); --shadow-3: 0px 4px 4px hsla(231, 20%, 49%, 0.06); --shadow-4: 0px 15px 30px hsla(210, 30%, 32%, 0.05); --shadow-5: 0px 15px hsla(241, 62%, 34%, 0.04);  /* ------------ RADIUS ------------ */ --radius-8: 8px; --radius-10: 10px; --radius-15: 15px; --radius-20: 20px;  /* ------------ TRANSITIONS ------------ */ --transition-1: 0.25s ease; --transition-2: 0.5s ease; --to-top-transition: top 0.3s; --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28); --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);  /* ------------ Z INDEX ------------ */ --z-1:1; --z-2:10; --z-3:100; --z-4: 900; --z-5: 1000;  /* ------------ COLORS ------------ */ --sky-blue-crayola: hsl(188, 64%, 60%); --raisin-black_90: hsla(240, 8%, 12%, 0.9); --raisin-black-1: hsl(240, 8%, 17%); --raisin-black-2: hsl(240, 8%, 12%); --majorelle-blue: hsl(241, 77%, 63%); --blue-ryb_80: hsla(241, 88%, 60%, 0.8); --bittersweet: hsl(0, 100%, 69%); --eerie-black: hsl(0, 0%, 13%); --ghost-white: hsl(230, 60%, 98%); --light-gray: hsl(0, 0%, 80%); --slate-gray: hsl(225, 8%, 48%); --cool-gray: hsl(225, 11%, 59%); --gainsboro: hsl(217, 16%, 90%); --mustard: hsl(47, 100%, 69%); --white: hsl(0, 0%, 100%); --black: hsl(0, 0%, 0%); --onyx: hsl(240, 5%, 26%); --jet: hsl(0, 0%, 21%); }    /* =============== GENERAL =============== */ body, html { margin: 0; padding: 0; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; font-family: var(--body-font); background-color: var(--body-color); /* Use primary color variable */ color: var(--text-color-dark); /* Use secondary color variable */ }  section { flex: 1; /* Allow sections to take up available space */ margin-top: 60px; /* Adjust for navbar height */ padding: 60px 20px; text-align: center; }  h2 { margin-bottom: 20px; }  p { margin: 0 auto; max-width: 600px; }  /* #hero, #about, #services, #contact { min-height: 100vh; } */  #hero, #services, #contact { min-height: 100vh; }  .text-coloring { color: var(--primary-color); }    /* =============== NAVIGATION =============== */ .navbar { top: -100px; /* Hide navbar initially */ width: 100%; height: 75px; padding: 10px 0; position: fixed; z-index: var(--z-5); transition: var(--to-top-transition); background-color: var(--raisin-black-2); }  .navbar.visible { top: 0; /* Show navbar when scrolling */ }  .nav-container { margin: 0 auto; padding: 0 20px; max-width: 1200px; display: flex; justify-content: space-between; align-items: center; }  .brand img { height: 75px; }  .navbar ul { margin: 0; padding: 0; display: flex; list-style: none; justify-content: center; }  .navbar ul li { margin: 0 15px; }  .navbar ul li a { text-decoration: none; color: var(--white); font-size: var(--font-size-8); }  .navbar ul li a:hover { color: var(--primary-color-dark); }  .menu-toggle { display: none; cursor: pointer; flex-direction: column; }  .bar { margin: 4px 0; width: 25px; height: 3px; transition: 0.4s; background-color: var(--white); }  .overlay { top: 0; left: 0; width: 100%; height: 100%; display: none; /* Initially hidden */ position: fixed; background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */ z-index: var(--z-4); /* Ensure overlay is behind menu but above content */ }  .overlay.active { display: block; /* Show overlay when menu is active */ }  .navbar ul li a.active { color: var(--primary-color); /* Color for active link */ }    /* =============== HERO =============== */ .hero { padding: 0; /* gets rid of section padding that screws up it taking up the whole page */ margin-top: auto; /* takes up the extra space at the top */ display: flex; position: relative; text-align: center; align-items: center; flex-direction: column; justify-content: center; background-size: cover; background-position: center; background-image: url('../../assets/images/hero-banner.jpg'); /* Replace with your image URL */ }  .hero-overlay { top: 0; left: 0; width: 100%; height: 100%; position: absolute; background-color: rgba(0, 0, 0, 0.75); /* Adjust opacity as needed */ }  .hero-content { margin-bottom: 150px; /* Brings the content up a bit */ position: relative; z-index: var(--z-4); color: var(--white); }  .hero-btn { margin-top: 20px; padding: 10px 20px; border-radius: 5px; display: inline-block; text-decoration: none; transition: background-color 0.3s ease; color: var(--white); background-color: var(--primary-color); }  .hero-btn:hover { background-color: var(--primary-color-dark); }    /* =============== ABOUT =============== */ .about { margin-top: auto; text-align: center; padding-top: 50px; min-height: calc(100vh - 175px); /* Set minimum height to fill remaining viewport minus the navbar (top: -100px, height: 75px) */ background-color: var(--ghost-white); /* Light gray background */ }  .about h2 { margin-bottom: 30px; /* Space below heading */ }  .about p { max-width: 600px; margin: 0 auto 65px; /* Center and add space below paragraph */ color: var(--text-color-dark); /* Adjust text color */ }  .about-grid { gap: 30px; /* Gap between grid items */ margin-top: 30px; /* Space above grid */ display: grid; justify-items: center; /* Center items horizontally */ /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */ grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid layout */ }  .about-item { padding: 20px; text-align: center; /* Center align content within each item */ background-color: var(--body-color); /* White background for each item */ border-radius: var(--radius-10); /* Rounded corners */ box-shadow: var(--shadow-2); /* Soft shadow */ }  .about-item img { width: 100%; /* Make the image fill the entire width of its container */ height: 250px; margin-bottom: 15px; /* Space below icon */  display: block; /* Prevent inline gaps */ object-fit: cover; /* Ensure images cover the entire container */ }  .about-item h3 { margin-bottom: 10px; /* Space below heading */ }  .about-item p { color: var(--slate-gray); /* Adjust text color */ margin-bottom: 20px; }  .about h2 { position: relative; /* Ensure the line is positioned relative to the h2 */ }  .about h2::after { height: 3px; /* Adjust line thickness as needed */ width: 150px; /* Adjust line width as needed */ left: 50%; /* Center the line */ bottom: -10px; /* Adjust distance from text */ content: ''; /* Required for pseudo-elements */ display: block; /* Ensure it takes full width */ position: absolute; /* Position relative to h2 */ transform: translateX(-50%); /* Center the line horizontally */ background-color: var(--primary-color-dark); /* Choose your desired color */ }    /* =============== SERVICES =============== */ .services { margin-top: auto; text-align: center; padding-top: 50px; min-height: calc(100vh - 175px); /* Set minimum height to fill remaining viewport minus the navbar (top: -100px, height: 75px) */ background-color: var(--body-color); /* Light gray background */ }  section .services { display: grid; place-items: center; }  .services h2 { position: relative; /* Ensure the line is positioned relative to the h2 */ margin-bottom: 40px; /* Space below heading */ }  .services h2::after { height: 3px; /* Adjust line thickness as needed */ width: 175px; /* Adjust line width as needed */ left: 50%; /* Center the line */ bottom: -10px; /* Adjust distance from text */ content: ''; /* Required for pseudo-elements */ display: block; /* Ensure it takes full width */ position: absolute; /* Position relative to h2 */ transform: translateX(-50%); /* Center the line horizontally */ background-color: var(--primary-color-dark); /* Choose your desired color */ }  .services p { margin-bottom: 65px; }  .services .row { display: flex; flex-wrap: wrap; }  .services .column { width: 100%; padding: 0 1em 1em 1em; text-align: center; box-sizing: border-box; } .services .card { width: 100%; height: 100%; padding: 2em 1.5em; background: linear-gradient(var(--body-color) 50%, var(--primary-color) 50%); background-size: 100% 200%; background-position: 0 2.5%; border-radius: 5px; box-shadow: 0 0 35px rgba(0, 0, 0, 0.12); cursor: pointer; transition: 0.5s; box-sizing: border-box; }  .services h3 { font-size: 20px; font-weight: 600; margin: 1em 0; }  .services p { font-size: 15px; line-height: 1.6; letter-spacing: 0.03em; }  .services .icon-wrapper { position: relative; margin: auto; font-size: 30px; height: 2.5em; width: 2.5em; border-radius: 50%; display: grid; place-items: center; transition: 0.5s; color: var(--white); background-color: var(--primary-color-light); }  .services .card:hover { background-position: 0 100%; }  .services .card:hover .icon-wrapper { color: var(--primary-color-light); background-color: var(--body-color); }  .services .card:hover h3 { color: var(--body-color); } .services .card:hover p { color: var(--body-color); }    /* =============== CONTACT =============== */ .contact { margin-top: auto; text-align: center; padding-top: 50px; min-height: calc(100vh - 175px); /* Set minimum height to fill remaining viewport minus the navbar (top: -100px, height: 75px) */ background-color: var(--ghost-white); }  .contact form { max-width: 600px; margin: 0 auto; padding: 30px; background-color: var(--body-color); border: 2px solid var(--primary-color-dark); border-radius: var(--radius-10); box-shadow: var(--shadow-2); }  .contact form div { margin-bottom: 20px; }  .contact label { display: block; margin-bottom: 5px; text-align: left; }  .required { color: red; margin-left: 5px; }  .contact input, .contact select, .contact textarea { width: 100%; padding: 10px; border: 1px solid var(--primary-color-dark); border-radius: var(--radius-10); box-sizing: border-box; }  .contact textarea { resize: vertical; }  .contact-btn { width: 100%; padding: 15px; background-color: var(--primary-color-dark); color: white; border: none; border-radius: var(--radius-10); cursor: pointer; }  .contact-btn:hover { background-color: var(--primary-color); }  .success-popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background-color: var(--body-color); border: 1px solid var(--primary-color-dark); border-radius: var(--radius-10); box-shadow: var(--shadow-2); z-index: 1000; text-align: center; }  .success-popup p { margin-bottom: 15px; }  .success-popup button { padding: 10px; background-color: var(--primary-color-dark); color: white; border: none; border-radius: var(--radius-10); cursor: pointer; }  .contact h2 { position: relative; /* Ensure the line is positioned relative to the h2 */ margin-bottom: 40px; /* Space below heading */ }  .contact h2::after { height: 3px; /* Adjust line thickness as needed */ width: 175px; /* Adjust line width as needed */ left: 50%; /* Center the line */ bottom: -10px; /* Adjust distance from text */ content: ''; /* Required for pseudo-elements */ display: block; /* Ensure it takes full width */ position: absolute; /* Position relative to h2 */ transform: translateX(-50%); /* Center the line horizontally */ background-color: var(--primary-color-dark); /* Choose your desired color */ }  .contact p { margin-bottom: 65px; }    /* =============== FOOTER =============== */ .footer { bottom: 0; width: 100%; padding: 10px 0; position: relative; text-align: center; background-color: var(--raisin-black-2); /* Solid black background */ color: var(--white); }    /* =============== SCROLL-TO-TOP =============== */ .scroll-to-top { right: 20px; padding: 10px; border-radius: 25%; border: none; display: none; /* Initially hidden */ cursor: pointer; position: fixed; align-items: center; justify-content: center; transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Add transform and box-shadow transitions */ bottom: calc(5vh + 20px); /* Adjust position above the footer */ z-index: var(--z-5); background-color: var(--primary-color); color: var(--white); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for the button */ }  .scroll-to-top:hover { background-color: var(--primary-color); transform: translateY(-5px); /* Lift the button slightly on hover */ box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* Adjust shadow on hover */ }  .scroll-to-top svg { width: 24px; height: 24px; fill: var(--white); }     /* =============== RESPONSIVE =============== */ @media (max-width: 768px) { .navbar ul { top: 75px; left: -100%; width: 100%; position: absolute; flex-direction: column; transition: all 0.5s ease; background-color: var(--raisin-black-2); padding: 50px 0; /* Increase padding for more spacing */ text-align: center; /* Center align the menu items */ }  .navbar ul.active { left: 0; }  .navbar ul li { margin: 20px 0; /* Adjust margin for spacing between menu items */ position: relative; /* Ensure relative positioning for pseudo-element */ }  .navbar ul li::before { content: ''; position: absolute; bottom: -20px; /* Adjust the distance of the line from the link */ left: 50%; /* Center the line horizontally */ transform: translateX(-50%); width: 80%; /* Adjust the width of the line */ max-width: 200px; /* Set a maximum width for the line */ height: 1px; /* Adjust the height of the line */ background-color: rgba(255, 255, 255, 0.3); /* Line color */ }  .menu-toggle { display: flex; align-items: center; /* Center align the toggle button */ justify-content: center; /* Center align horizontally */ }  .menu-toggle .bar { width: 25px; height: 3px; background-color: #ffffff; margin: 5px; transition: transform 0.3s, opacity 0.3s; }  .menu-toggle.open .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }  .menu-toggle.open .bar:nth-child(2) { opacity: 0; }  .menu-toggle.open .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); } }  @media screen and (min-width: 768px) { section .services { padding: 0 2em; } .services .column { flex: 0 50%; max-width: 50%; } }  @media screen and (min-width: 992px) { section .services { padding: 1em 3em; } .services .column { flex: 0 0 33.33%; max-width: 33.33%; } }      /* Define primary and secondary colors using CSS variables */ :root { /* ------------ HEADER ------------ */ --header-height:3.5rem;  /* ------------ CUSTOM CONFIGURATION ------------ */ --primary-color: var(--majorelle-blue); --primary-color-light: var(--sky-blue-crayola); --primary-color-dark: var(--blue-ryb_80); --text-color-light: var(--white); --text-color-dark: var(--raisin-black-2); --body-color: var(--white); --body-color-alt: var(--cool-gray);  /* ------------ FONT ------------ */ --body-font: 'Red Hat Display', sans-serif; --second-font: 'Kaushan Script', cursive;  /* ------------ TYPOGRAPHY ------------ */ --font-size-1: 4rem; --font-size-2: 3.5rem; --font-size-3: 2.4rem; --font-size-4: 2.2rem; --font-size-5: 2rem; --font-size-6: 1.8rem; --font-size-7: 1.7rem; --font-size-8: 1.5rem; --font-size-9: 1.4rem; --font-size-10: 1.25rem; --font-size-11: 1rem; --font-size-12: .938rem; --font-size-13: .813rem;  /* ------------ WEIGHT ------------ */ --boldest-font: 900; --very-bold-font: 700; --bold-font: 500;  /* ------------ GRADIENTS ------------ */ --gradient: radial-gradient(ellipse at center, hsla(0, 0%, 0%, 0.25), transparent 80%);  /* ------------ SPACING ------------ */ --section-padding: 100px;  /* ------------ SHADOWS ------------ */ --shadow-1: 0px 2px 50px hsla(223, 40%, 76%, 0.3); --shadow-2: 0px -2px 12px hsl(252, 29%, 93%); --shadow-3: 0px 4px 4px hsla(231, 20%, 49%, 0.06); --shadow-4: 0px 15px 30px hsla(210, 30%, 32%, 0.05); --shadow-5: 0px 15px hsla(241, 62%, 34%, 0.04);  /* ------------ RADIUS ------------ */ --radius-8: 8px; --radius-10: 10px; --radius-15: 15px; --radius-20: 20px;  /* ------------ TRANSITIONS ------------ */ --transition-1: 0.25s ease; --transition-2: 0.5s ease; --to-top-transition: top 0.3s; --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28); --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);  /* ------------ Z INDEX ------------ */ --z-1:1; --z-2:10; --z-3:100; --z-4: 900; --z-5: 1000;  /* ------------ COLORS ------------ */ --sky-blue-crayola: hsl(188, 64%, 60%); --raisin-black_90: hsla(240, 8%, 12%, 0.9); --raisin-black-1: hsl(240, 8%, 17%); --raisin-black-2: hsl(240, 8%, 12%); --majorelle-blue: hsl(241, 77%, 63%); --blue-ryb_80: hsla(241, 88%, 60%, 0.8); --bittersweet: hsl(0, 100%, 69%); --eerie-black: hsl(0, 0%, 13%); --ghost-white: hsl(230, 60%, 98%); --light-gray: hsl(0, 0%, 80%); --slate-gray: hsl(225, 8%, 48%); --cool-gray: hsl(225, 11%, 59%); --gainsboro: hsl(217, 16%, 90%); --mustard: hsl(47, 100%, 69%); --white: hsl(0, 0%, 100%); --black: hsl(0, 0%, 0%); --onyx: hsl(240, 5%, 26%); --jet: hsl(0, 0%, 21%); }    /* =============== GENERAL =============== */ body, html { margin: 0; padding: 0; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; font-family: var(--body-font); background-color: var(--body-color); /* Use primary color variable */ color: var(--text-color-dark); /* Use secondary color variable */ }  section { flex: 1; /* Allow sections to take up available space */ margin-top: 60px; /* Adjust for navbar height */ padding: 60px 20px; text-align: center; }  h2 { margin-bottom: 20px; }  p { margin: 0 auto; max-width: 600px; }  /* #hero, #about, #services, #contact { min-height: 100vh; } */  #hero, #services, #contact { min-height: 100vh; }  .text-coloring { color: var(--primary-color); }    /* =============== NAVIGATION =============== */ .navbar { top: -100px; /* Hide navbar initially */ width: 100%; height: 75px; padding: 10px 0; position: fixed; z-index: var(--z-5); transition: var(--to-top-transition); background-color: var(--raisin-black-2); }  .navbar.visible { top: 0; /* Show navbar when scrolling */ }  .nav-container { margin: 0 auto; padding: 0 20px; max-width: 1200px; display: flex; justify-content: space-between; align-items: center; }  .brand img { height: 75px; }  .navbar ul { margin: 0; padding: 0; display: flex; list-style: none; justify-content: center; }  .navbar ul li { margin: 0 15px; }  .navbar ul li a { text-decoration: none; color: var(--white); font-size: var(--font-size-8); }  .navbar ul li a:hover { color: var(--primary-color-dark); }  .menu-toggle { display: none; cursor: pointer; flex-direction: column; }  .bar { margin: 4px 0; width: 25px; height: 3px; transition: 0.4s; background-color: var(--white); }  .overlay { top: 0; left: 0; width: 100%; height: 100%; display: none; /* Initially hidden */ position: fixed; background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */ z-index: var(--z-4); /* Ensure overlay is behind menu but above content */ }  .overlay.active { display: block; /* Show overlay when menu is active */ }  .navbar ul li a.active { color: var(--primary-color); /* Color for active link */ }    /* =============== HERO =============== */ .hero { padding: 0; /* gets rid of section padding that screws up it taking up the whole page */ margin-top: auto; /* takes up the extra space at the top */ display: flex; position: relative; text-align: center; align-items: center; flex-direction: column; justify-content: center; background-size: cover; background-position: center; background-image: url('../../assets/images/hero-banner.jpg'); /* Replace with your image URL */ }  .hero-overlay { top: 0; left: 0; width: 100%; height: 100%; position: absolute; background-color: rgba(0, 0, 0, 0.75); /* Adjust opacity as needed */ }  .hero-content { margin-bottom: 150px; /* Brings the content up a bit */ position: relative; z-index: var(--z-4); color: var(--white); }  .hero-btn { margin-top: 20px; padding: 10px 20px; border-radius: 5px; display: inline-block; text-decoration: none; transition: background-color 0.3s ease; color: var(--white); background-color: var(--primary-color); }  .hero-btn:hover { background-color: var(--primary-color-dark); }    /* =============== ABOUT =============== */ .about { margin-top: auto; text-align: center; padding-top: 50px; min-height: calc(100vh - 175px); /* Set minimum height to fill remaining viewport minus the navbar (top: -100px, height: 75px) */ background-color: var(--ghost-white); /* Light gray background */ }  .about h2 { margin-bottom: 30px; /* Space below heading */ }  .about p { max-width: 600px; margin: 0 auto 65px; /* Center and add space below paragraph */ color: var(--text-color-dark); /* Adjust text color */ }  .about-grid { gap: 30px; /* Gap between grid items */ margin-top: 30px; /* Space above grid */ display: grid; justify-items: center; /* Center items horizontally */ /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */ grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid layout */ }  .about-item { padding: 20px; text-align: center; /* Center align content within each item */ background-color: var(--body-color); /* White background for each item */ border-radius: var(--radius-10); /* Rounded corners */ box-shadow: var(--shadow-2); /* Soft shadow */ }  .about-item img { width: 100%; /* Make the image fill the entire width of its container */ height: 250px; margin-bottom: 15px; /* Space below icon */  display: block; /* Prevent inline gaps */ object-fit: cover; /* Ensure images cover the entire container */ }  .about-item h3 { margin-bottom: 10px; /* Space below heading */ }  .about-item p { color: var(--slate-gray); /* Adjust text color */ margin-bottom: 20px; }  .about h2 { position: relative; /* Ensure the line is positioned relative to the h2 */ }  .about h2::after { height: 3px; /* Adjust line thickness as needed */ width: 150px; /* Adjust line width as needed */ left: 50%; /* Center the line */ bottom: -10px; /* Adjust distance from text */ content: ''; /* Required for pseudo-elements */ display: block; /* Ensure it takes full width */ position: absolute; /* Position relative to h2 */ transform: translateX(-50%); /* Center the line horizontally */ background-color: var(--primary-color-dark); /* Choose your desired color */ }    /* =============== SERVICES =============== */ .services { margin-top: auto; text-align: center; padding-top: 50px; min-height: calc(100vh - 175px); /* Set minimum height to fill remaining viewport minus the navbar (top: -100px, height: 75px) */ background-color: var(--body-color); /* Light gray background */ }  section .services { display: grid; place-items: center; }  .services h2 { position: relative; /* Ensure the line is positioned relative to the h2 */ margin-bottom: 40px; /* Space below heading */ }  .services h2::after { height: 3px; /* Adjust line thickness as needed */ width: 175px; /* Adjust line width as needed */ left: 50%; /* Center the line */ bottom: -10px; /* Adjust distance from text */ content: ''; /* Required for pseudo-elements */ display: block; /* Ensure it takes full width */ position: absolute; /* Position relative to h2 */ transform: translateX(-50%); /* Center the line horizontally */ background-color: var(--primary-color-dark); /* Choose your desired color */ }  .services p { margin-bottom: 65px; }  .services .row { display: flex; flex-wrap: wrap; }  .services .column { width: 100%; padding: 0 1em 1em 1em; text-align: center; box-sizing: border-box; } .services .card { width: 100%; height: 100%; padding: 2em 1.5em; background: linear-gradient(var(--body-color) 50%, var(--primary-color) 50%); background-size: 100% 200%; background-position: 0 2.5%; border-radius: 5px; box-shadow: 0 0 35px rgba(0, 0, 0, 0.12); cursor: pointer; transition: 0.5s; box-sizing: border-box; }  .services h3 { font-size: 20px; font-weight: 600; margin: 1em 0; }  .services p { font-size: 15px; line-height: 1.6; letter-spacing: 0.03em; }  .services .icon-wrapper { position: relative; margin: auto; font-size: 30px; height: 2.5em; width: 2.5em; border-radius: 50%; display: grid; place-items: center; transition: 0.5s; color: var(--white); background-color: var(--primary-color-light); }  .services .card:hover { background-position: 0 100%; }  .services .card:hover .icon-wrapper { color: var(--primary-color-light); background-color: var(--body-color); }  .services .card:hover h3 { color: var(--body-color); } .services .card:hover p { color: var(--body-color); }    /* =============== CONTACT =============== */ .contact { margin-top: auto; text-align: center; padding-top: 50px; min-height: calc(100vh - 175px); /* Set minimum height to fill remaining viewport minus the navbar (top: -100px, height: 75px) */ background-color: var(--ghost-white); }  .contact form { max-width: 600px; margin: 0 auto; padding: 30px; background-color: var(--body-color); border: 2px solid var(--primary-color-dark); border-radius: var(--radius-10); box-shadow: var(--shadow-2); }  .contact form div { margin-bottom: 20px; }  .contact label { display: block; margin-bottom: 5px; text-align: left; }  .required { color: red; margin-left: 5px; }  .contact input, .contact select, .contact textarea { width: 100%; padding: 10px; border: 1px solid var(--primary-color-dark); border-radius: var(--radius-10); box-sizing: border-box; }  .contact textarea { resize: vertical; }  .contact-btn { width: 100%; padding: 15px; background-color: var(--primary-color-dark); color: white; border: none; border-radius: var(--radius-10); cursor: pointer; }  .contact-btn:hover { background-color: var(--primary-color); }  .success-popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background-color: var(--body-color); border: 1px solid var(--primary-color-dark); border-radius: var(--radius-10); box-shadow: var(--shadow-2); z-index: 1000; text-align: center; }  .success-popup p { margin-bottom: 15px; }  .success-popup button { padding: 10px; background-color: var(--primary-color-dark); color: white; border: none; border-radius: var(--radius-10); cursor: pointer; }  .contact h2 { position: relative; /* Ensure the line is positioned relative to the h2 */ margin-bottom: 40px; /* Space below heading */ }  .contact h2::after { height: 3px; /* Adjust line thickness as needed */ width: 175px; /* Adjust line width as needed */ left: 50%; /* Center the line */ bottom: -10px; /* Adjust distance from text */ content: ''; /* Required for pseudo-elements */ display: block; /* Ensure it takes full width */ position: absolute; /* Position relative to h2 */ transform: translateX(-50%); /* Center the line horizontally */ background-color: var(--primary-color-dark); /* Choose your desired color */ }  .contact p { margin-bottom: 65px; }    /* =============== FOOTER =============== */ .footer { bottom: 0; width: 100%; padding: 10px 0; position: relative; text-align: center; background-color: var(--raisin-black-2); /* Solid black background */ color: var(--white); }    /* =============== SCROLL-TO-TOP =============== */ .scroll-to-top { right: 20px; padding: 10px; border-radius: 25%; border: none; display: none; /* Initially hidden */ cursor: pointer; position: fixed; align-items: center; justify-content: center; transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Add transform and box-shadow transitions */ bottom: calc(5vh + 20px); /* Adjust position above the footer */ z-index: var(--z-5); background-color: var(--primary-color); color: var(--white); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for the button */ }  .scroll-to-top:hover { background-color: var(--primary-color); transform: translateY(-5px); /* Lift the button slightly on hover */ box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* Adjust shadow on hover */ }  .scroll-to-top svg { width: 24px; height: 24px; fill: var(--white); }     /* =============== RESPONSIVE =============== */ @media (max-width: 768px) { .navbar ul { top: 75px; left: -100%; width: 100%; position: absolute; flex-direction: column; transition: all 0.5s ease; background-color: var(--raisin-black-2); padding: 50px 0; /* Increase padding for more spacing */ text-align: center; /* Center align the menu items */ }  .navbar ul.active { left: 0; }  .navbar ul li { margin: 20px 0; /* Adjust margin for spacing between menu items */ position: relative; /* Ensure relative positioning for pseudo-element */ }  .navbar ul li::before { content: ''; position: absolute; bottom: -20px; /* Adjust the distance of the line from the link */ left: 50%; /* Center the line horizontally */ transform: translateX(-50%); width: 80%; /* Adjust the width of the line */ max-width: 200px; /* Set a maximum width for the line */ height: 1px; /* Adjust the height of the line */ background-color: rgba(255, 255, 255, 0.3); /* Line color */ }  .menu-toggle { display: flex; align-items: center; /* Center align the toggle button */ justify-content: center; /* Center align horizontally */ }  .menu-toggle .bar { width: 25px; height: 3px; background-color: #ffffff; margin: 5px; transition: transform 0.3s, opacity 0.3s; }  .menu-toggle.open .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }  .menu-toggle.open .bar:nth-child(2) { opacity: 0; }  .menu-toggle.open .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); } }  @media screen and (min-width: 768px) { section .services { padding: 0 2em; } .services .column { flex: 0 50%; max-width: 50%; } }  @media screen and (min-width: 992px) { section .services { padding: 1em 3em; } .services .column { flex: 0 0 33.33%; max-width: 33.33%; } }       /* Define primary and secondary colors using CSS variables */ :root { /* ------------ HEADER ------------ */ --header-height:3.5rem;  /* ------------ CUSTOM CONFIGURATION ------------ */ --primary-color: var(--majorelle-blue); --primary-color-light: var(--sky-blue-crayola); --primary-color-dark: var(--blue-ryb_80); --text-color-light: var(--white); --text-color-dark: var(--raisin-black-2); --body-color: var(--white); --body-color-alt: var(--cool-gray);  /* ------------ FONT ------------ */ --body-font: 'Red Hat Display', sans-serif; --second-font: 'Kaushan Script', cursive;  /* ------------ TYPOGRAPHY ------------ */ --font-size-1: 4rem; --font-size-2: 3.5rem; --font-size-3: 2.4rem; --font-size-4: 2.2rem; --font-size-5: 2rem; --font-size-6: 1.8rem; --font-size-7: 1.7rem; --font-size-8: 1.5rem; --font-size-9: 1.4rem; --font-size-10: 1.25rem; --font-size-11: 1rem; --font-size-12: .938rem; --font-size-13: .813rem;  /* ------------ WEIGHT ------------ */ --boldest-font: 900; --very-bold-font: 700; --bold-font: 500;  /* ------------ GRADIENTS ------------ */ --gradient: radial-gradient(ellipse at center, hsla(0, 0%, 0%, 0.25), transparent 80%);  /* ------------ SPACING ------------ */ --section-padding: 100px;  /* ------------ SHADOWS ------------ */ --shadow-1: 0px 2px 50px hsla(223, 40%, 76%, 0.3); --shadow-2: 0px -2px 12px hsl(252, 29%, 93%); --shadow-3: 0px 4px 4px hsla(231, 20%, 49%, 0.06); --shadow-4: 0px 15px 30px hsla(210, 30%, 32%, 0.05); --shadow-5: 0px 15px hsla(241, 62%, 34%, 0.04);  /* ------------ RADIUS ------------ */ --radius-8: 8px; --radius-10: 10px; --radius-15: 15px; --radius-20: 20px;  /* ------------ TRANSITIONS ------------ */ --transition-1: 0.25s ease; --transition-2: 0.5s ease; --to-top-transition: top 0.3s; --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28); --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);  /* ------------ Z INDEX ------------ */ --z-1:1; --z-2:10; --z-3:100; --z-4: 900; --z-5: 1000;  /* ------------ COLORS ------------ */ --sky-blue-crayola: hsl(188, 64%, 60%); --raisin-black_90: hsla(240, 8%, 12%, 0.9); --raisin-black-1: hsl(240, 8%, 17%); --raisin-black-2: hsl(240, 8%, 12%); --majorelle-blue: hsl(241, 77%, 63%); --blue-ryb_80: hsla(241, 88%, 60%, 0.8); --bittersweet: hsl(0, 100%, 69%); --eerie-black: hsl(0, 0%, 13%); --ghost-white: hsl(230, 60%, 98%); --light-gray: hsl(0, 0%, 80%); --slate-gray: hsl(225, 8%, 48%); --cool-gray: hsl(225, 11%, 59%); --gainsboro: hsl(217, 16%, 90%); --mustard: hsl(47, 100%, 69%); --white: hsl(0, 0%, 100%); --black: hsl(0, 0%, 0%); --onyx: hsl(240, 5%, 26%); --jet: hsl(0, 0%, 21%); }    /* =============== GENERAL =============== */ body, html { margin: 0; padding: 0; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; font-family: var(--body-font); background-color: var(--body-color); /* Use primary color variable */ color: var(--text-color-dark); /* Use secondary color variable */ }  section { flex: 1; /* Allow sections to take up available space */ margin-top: 60px; /* Adjust for navbar height */ padding: 60px 20px; text-align: center; }  h2 { margin-bottom: 20px; }  p { margin: 0 auto; max-width: 600px; }  /* #hero, #about, #services, #contact { min-height: 100vh; } */  #hero, #services, #contact { min-height: 100vh; }  .text-coloring { color: var(--primary-color); }    /* =============== NAVIGATION =============== */ .navbar { top: -100px; /* Hide navbar initially */ width: 100%; height: 75px; padding: 10px 0; position: fixed; z-index: var(--z-5); transition: var(--to-top-transition); background-color: var(--raisin-black-2); }  .navbar.visible { top: 0; /* Show navbar when scrolling */ }  .nav-container { margin: 0 auto; padding: 0 20px; max-width: 1200px; display: flex; justify-content: space-between; align-items: center; }  .brand img { height: 75px; }  .navbar ul { margin: 0; padding: 0; display: flex; list-style: none; justify-content: center; }  .navbar ul li { margin: 0 15px; }  .navbar ul li a { text-decoration: none; color: var(--white); font-size: var(--font-size-8); }  .navbar ul li a:hover { color: var(--primary-color-dark); }  .menu-toggle { display: none; cursor: pointer; flex-direction: column; }  .bar { margin: 4px 0; width: 25px; height: 3px; transition: 0.4s; background-color: var(--white); }  .overlay { top: 0; left: 0; width: 100%; height: 100%; display: none; /* Initially hidden */ position: fixed; background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */ z-index: var(--z-4); /* Ensure overlay is behind menu but above content */ }  .overlay.active { display: block; /* Show overlay when menu is active */ }  .navbar ul li a.active { color: var(--primary-color); /* Color for active link */ }    /* =============== HERO =============== */ .hero { padding: 0; /* gets rid of section padding that screws up it taking up the whole page */ margin-top: auto; /* takes up the extra space at the top */ display: flex; position: relative; text-align: center; align-items: center; flex-direction: column; justify-content: center; background-size: cover; background-position: center; background-image: url('../../assets/images/hero-banner.jpg'); /* Replace with your image URL */ }  .hero-overlay { top: 0; left: 0; width: 100%; height: 100%; position: absolute; background-color: rgba(0, 0, 0, 0.75); /* Adjust opacity as needed */ }  .hero-content { margin-bottom: 150px; /* Brings the content up a bit */ position: relative; z-index: var(--z-4); color: var(--white); }  .hero-btn { margin-top: 20px; padding: 10px 20px; border-radius: 5px; display: inline-block; text-decoration: none; transition: background-color 0.3s ease; color: var(--white); background-color: var(--primary-color); }  .hero-btn:hover { background-color: var(--primary-color-dark); }    /* =============== ABOUT =============== */ .about { margin-top: auto; text-align: center; padding-top: 50px; min-height: calc(100vh - 175px); /* Set minimum height to fill remaining viewport minus the navbar (top: -100px, height: 75px) */ background-color: var(--ghost-white); /* Light gray background */ }  .about h2 { margin-bottom: 30px; /* Space below heading */ }  .about p { max-width: 600px; margin: 0 auto 65px; /* Center and add space below paragraph */ color: var(--text-color-dark); /* Adjust text color */ }  .about-grid { gap: 30px; /* Gap between grid items */ margin-top: 30px; /* Space above grid */ display: grid; justify-items: center; /* Center items horizontally */ /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */ grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid layout */ }  .about-item { padding: 20px; text-align: center; /* Center align content within each item */ background-color: var(--body-color); /* White background for each item */ border-radius: var(--radius-10); /* Rounded corners */ box-shadow: var(--shadow-2); /* Soft shadow */ }  .about-item img { width: 100%; /* Make the image fill the entire width of its container */ height: 250px; margin-bottom: 15px; /* Space below icon */  display: block; /* Prevent inline gaps */ object-fit: cover; /* Ensure images cover the entire container */ }  .about-item h3 { margin-bottom: 10px; /* Space below heading */ }  .about-item p { color: var(--slate-gray); /* Adjust text color */ margin-bottom: 20px; }  .about h2 { position: relative; /* Ensure the line is positioned relative to the h2 */ }  .about h2::after { height: 3px; /* Adjust line thickness as needed */ width: 150px; /* Adjust line width as needed */ left: 50%; /* Center the line */ bottom: -10px; /* Adjust distance from text */ content: ''; /* Required for pseudo-elements */ display: block; /* Ensure it takes full width */ position: absolute; /* Position relative to h2 */ transform: translateX(-50%); /* Center the line horizontally */ background-color: var(--primary-color-dark); /* Choose your desired color */ }    /* =============== SERVICES =============== */ .services { margin-top: auto; text-align: center; padding-top: 50px; min-height: calc(100vh - 175px); /* Set minimum height to fill remaining viewport minus the navbar (top: -100px, height: 75px) */ background-color: var(--body-color); /* Light gray background */ }  section .services { display: grid; place-items: center; }  .services h2 { position: relative; /* Ensure the line is positioned relative to the h2 */ margin-bottom: 40px; /* Space below heading */ }  .services h2::after { height: 3px; /* Adjust line thickness as needed */ width: 175px; /* Adjust line width as needed */ left: 50%; /* Center the line */ bottom: -10px; /* Adjust distance from text */ content: ''; /* Required for pseudo-elements */ display: block; /* Ensure it takes full width */ position: absolute; /* Position relative to h2 */ transform: translateX(-50%); /* Center the line horizontally */ background-color: var(--primary-color-dark); /* Choose your desired color */ }  .services p { margin-bottom: 65px; }  .services .row { display: flex; flex-wrap: wrap; }  .services .column { width: 100%; padding: 0 1em 1em 1em; text-align: center; box-sizing: border-box; } .services .card { width: 100%; height: 100%; padding: 2em 1.5em; background: linear-gradient(var(--body-color) 50%, var(--primary-color) 50%); background-size: 100% 200%; background-position: 0 2.5%; border-radius: 5px; box-shadow: 0 0 35px rgba(0, 0, 0, 0.12); cursor: pointer; transition: 0.5s; box-sizing: border-box; }  .services h3 { font-size: 20px; font-weight: 600; margin: 1em 0; }  .services p { font-size: 15px; line-height: 1.6; letter-spacing: 0.03em; }  .services .icon-wrapper { position: relative; margin: auto; font-size: 30px; height: 2.5em; width: 2.5em; border-radius: 50%; display: grid; place-items: center; transition: 0.5s; color: var(--white); background-color: var(--primary-color-light); }  .services .card:hover { background-position: 0 100%; }  .services .card:hover .icon-wrapper { color: var(--primary-color-light); background-color: var(--body-color); }  .services .card:hover h3 { color: var(--body-color); } .services .card:hover p { color: var(--body-color); }    /* =============== CONTACT =============== */ .contact { margin-top: auto; text-align: center; padding-top: 50px; min-height: calc(100vh - 175px); /* Set minimum height to fill remaining viewport minus the navbar (top: -100px, height: 75px) */ background-color: var(--ghost-white); }  .contact form { max-width: 600px; margin: 0 auto; padding: 30px; background-color: var(--body-color); border: 2px solid var(--primary-color-dark); border-radius: var(--radius-10); box-shadow: var(--shadow-2); }  .contact form div { margin-bottom: 20px; }  .contact label { display: block; margin-bottom: 5px; text-align: left; }  .required { color: red; margin-left: 5px; }  .contact input, .contact select, .contact textarea { width: 100%; padding: 10px; border: 1px solid var(--primary-color-dark); border-radius: var(--radius-10); box-sizing: border-box; }  .contact textarea { resize: vertical; }  .contact-btn { width: 100%; padding: 15px; background-color: var(--primary-color-dark); color: white; border: none; border-radius: var(--radius-10); cursor: pointer; }  .contact-btn:hover { background-color: var(--primary-color); }  .success-popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background-color: var(--body-color); border: 1px solid var(--primary-color-dark); border-radius: var(--radius-10); box-shadow: var(--shadow-2); z-index: 1000; text-align: center; }  .success-popup p { margin-bottom: 15px; }  .success-popup button { padding: 10px; background-color: var(--primary-color-dark); color: white; border: none; border-radius: var(--radius-10); cursor: pointer; }  .contact h2 { position: relative; /* Ensure the line is positioned relative to the h2 */ margin-bottom: 40px; /* Space below heading */ }  .contact h2::after { height: 3px; /* Adjust line thickness as needed */ width: 175px; /* Adjust line width as needed */ left: 50%; /* Center the line */ bottom: -10px; /* Adjust distance from text */ content: ''; /* Required for pseudo-elements */ display: block; /* Ensure it takes full width */ position: absolute; /* Position relative to h2 */ transform: translateX(-50%); /* Center the line horizontally */ background-color: var(--primary-color-dark); /* Choose your desired color */ }  .contact p { margin-bottom: 65px; }    /* =============== FOOTER =============== */ .footer { bottom: 0; width: 100%; padding: 10px 0; position: relative; text-align: center; background-color: var(--raisin-black-2); /* Solid black background */ color: var(--white); }    /* =============== SCROLL-TO-TOP =============== */ .scroll-to-top { right: 20px; padding: 10px; border-radius: 25%; border: none; display: none; /* Initially hidden */ cursor: pointer; position: fixed; align-items: center; justify-content: center; transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Add transform and box-shadow transitions */ bottom: calc(5vh + 20px); /* Adjust position above the footer */ z-index: var(--z-5); background-color: var(--primary-color); color: var(--white); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for the button */ }  .scroll-to-top:hover { background-color: var(--primary-color); transform: translateY(-5px); /* Lift the button slightly on hover */ box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* Adjust shadow on hover */ }  .scroll-to-top svg { width: 24px; height: 24px; fill: var(--white); }     /* =============== RESPONSIVE =============== */ @media (max-width: 768px) { .navbar ul { top: 75px; left: -100%; width: 100%; position: absolute; flex-direction: column; transition: all 0.5s ease; background-color: var(--raisin-black-2); padding: 50px 0; /* Increase padding for more spacing */ text-align: center; /* Center align the menu items */ }  .navbar ul.active { left: 0; }  .navbar ul li { margin: 20px 0; /* Adjust margin for spacing between menu items */ position: relative; /* Ensure relative positioning for pseudo-element */ }  .navbar ul li::before { content: ''; position: absolute; bottom: -20px; /* Adjust the distance of the line from the link */ left: 50%; /* Center the line horizontally */ transform: translateX(-50%); width: 80%; /* Adjust the width of the line */ max-width: 200px; /* Set a maximum width for the line */ height: 1px; /* Adjust the height of the line */ background-color: rgba(255, 255, 255, 0.3); /* Line color */ }  .menu-toggle { display: flex; align-items: center; /* Center align the toggle button */ justify-content: center; /* Center align horizontally */ }  .menu-toggle .bar { width: 25px; height: 3px; background-color: #ffffff; margin: 5px; transition: transform 0.3s, opacity 0.3s; }  .menu-toggle.open .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }  .menu-toggle.open .bar:nth-child(2) { opacity: 0; }  .menu-toggle.open .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); } }  @media screen and (min-width: 768px) { section .services { padding: 0 2em; } .services .column { flex: 0 50%; max-width: 50%; } }  @media screen and (min-width: 992px) { section .services { padding: 1em 3em; } .services .column { flex: 0 0 33.33%; max-width: 33.33%; } }
